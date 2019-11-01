@@ -1,0 +1,3474 @@
+CCS PCD C Compiler, Version 5.068, 5967               01-Oct-19 14:45
+
+               Filename:   C:\Users\Admin\Desktop\Fall2019\Nicol_lab4\lcd.lst
+
+               ROM used:   5976 bytes (53%)
+                           Largest free fragment is 5288
+               RAM used:   173 (8%) at main() level
+                           233 (11%) worst case
+               Stack used: 84 locations (40 in main + 44 for interrupts)
+               Stack size: 128
+
+*
+0000:  GOTO    100C
+*
+0014:  DATA    F4,03,00
+*
+0050:  DATA    DA,02,00
+....................  
+.................... #include <lcd.h> 
+.................... #include <24FV16KM202.h> 
+.................... //////////// Standard Header file for the PIC24FV16KM202 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC24FV16KM202 
+*
+0200:  CLR     32
+0202:  MOV     #20C,W3
+0204:  ADD     W3,W0,W0
+0206:  TBLRDL.B[W0],W0L
+0208:  CLR.B   1
+020A:  RETURN  
+020C:  DATA    31,32,00
+020E:  DATA    33,41,00
+0210:  DATA    34,35,00
+0212:  DATA    36,42,00
+0214:  DATA    37,38,00
+0216:  DATA    39,43,00
+0218:  DATA    2A,30,00
+021A:  DATA    23,44,00
+021C:  CLR     32
+021E:  MOV     #228,W3
+0220:  ADD     W3,W0,W0
+0222:  TBLRDL.B[W0],W0L
+0224:  CLR.B   1
+0226:  RETURN  
+0228:  DATA    0A,0D,00
+022A:  DATA    4E,69,00
+022C:  DATA    63,6F,00
+022E:  DATA    6C,20,00
+0230:  DATA    41,6E,00
+0232:  DATA    6F,6B,00
+0234:  DATA    68,69,00
+0236:  DATA    6E,0A,00
+0238:  DATA    0D,00,00
+023A:  CLR     32
+023C:  MOV     #246,W3
+023E:  ADD     W3,W0,W0
+0240:  TBLRDL.B[W0],W0L
+0242:  CLR.B   1
+0244:  RETURN  
+0246:  DATA    0A,0D,00
+0248:  DATA    41,3A,00
+024A:  DATA    2B,20,00
+024C:  DATA    42,3A,00
+024E:  DATA    2D,20,00
+0250:  DATA    43,3A,00
+0252:  DATA    2A,20,00
+0254:  DATA    44,3A,00
+0256:  DATA    2F,0A,00
+0258:  DATA    0D,00,00
+025A:  CLR     32
+025C:  MOV     #266,W3
+025E:  ADD     W3,W0,W0
+0260:  TBLRDL.B[W0],W0L
+0262:  CLR.B   1
+0264:  RETURN  
+0266:  DATA    0C,4E,00
+0268:  DATA    69,63,00
+026A:  DATA    6F,6C,00
+026C:  DATA    20,41,00
+026E:  DATA    6E,6F,00
+0270:  DATA    6B,68,00
+0272:  DATA    69,6E,00
+0274:  DATA    0A,00,00
+0276:  CLR     32
+0278:  MOV     #282,W3
+027A:  ADD     W3,W0,W0
+027C:  TBLRDL.B[W0],W0L
+027E:  CLR.B   1
+0280:  RETURN  
+0282:  DATA    41,3A,00
+0284:  DATA    2B,20,00
+0286:  DATA    42,3A,00
+0288:  DATA    2D,20,00
+028A:  DATA    43,3A,00
+028C:  DATA    2A,20,00
+028E:  DATA    44,3A,00
+0290:  DATA    2F,00,00
+0292:  CLR     32
+0294:  MOV     #29E,W3
+0296:  ADD     W3,W0,W0
+0298:  TBLRDL.B[W0],W0L
+029A:  CLR.B   1
+029C:  RETURN  
+029E:  DATA    0A,65,00
+02A0:  DATA    72,72,00
+02A2:  DATA    6F,72,00
+02A4:  DATA    00,00,00
+02A6:  CLR     32
+02A8:  MOV     #2B2,W3
+02AA:  ADD     W3,W0,W0
+02AC:  TBLRDL.B[W0],W0L
+02AE:  CLR.B   1
+02B0:  RETURN  
+02B2:  DATA    65,72,00
+02B4:  DATA    72,6F,00
+02B6:  DATA    72,00,00
+*
+0674:  MOV     W8,[W15++]
+0676:  MOV     #12,W8
+0678:  REPEAT  #4
+067A:  MOV     [W8++],[W15++]
+067C:  CLR     W11
+067E:  MUL.UU  W12,#0,W12
+0680:  MOV     W3,W8
+0682:  MOV     W7,W9
+0684:  MOV     #7FF,W10
+0686:  BCLR.B  42.0
+0688:  BCLR.B  42.1
+068A:  ASR     W8,#4,W8
+068C:  AND     W10,W8,W8
+068E:  CP0     W8
+0690:  BRA     Z,774
+0692:  BCLR.B  42.0
+0694:  BCLR.B  42.1
+0696:  ASR     W9,#4,W9
+0698:  AND     W10,W9,W9
+069A:  CP0     W9
+069C:  BRA     Z,774
+069E:  ADD     W9,W8,W8
+06A0:  BTSC    W9.B
+06A2:  BRA     6AC
+06A4:  SUB     #3FF,W8
+06A6:  BRA     Z,774
+06A8:  BRA     NC,774
+06AA:  BRA     6B2
+06AC:  MOV     #401,W10
+06AE:  ADD.B   W10L,W5L,W5L
+06B0:  BRA     C,774
+06B2:  XOR     W3,W7,W13
+06B4:  BCLR.B  42.0
+06B6:  BCLR.B  42.1
+06B8:  AND     #F,W3
+06BA:  BSET    W3.4
+06BC:  AND     #F,W7
+06BE:  BSET    W7.4
+06C0:  MOV     W8,[W15++]
+06C2:  MUL.UU  W4,W1,W8
+06C4:  MUL.UU  W5,W0,W10
+06C6:  ADD     W8,W10,W10
+06C8:  ADDC    W9,W11,W11
+06CA:  ADDC    #0,W12
+06CC:  MUL.UU  W4,W2,W8
+06CE:  ADD     W8,W11,W11
+06D0:  ADDC    W9,W12,W12
+06D2:  MUL.UU  W5,W1,W8
+06D4:  CLR     W10
+06D6:  ADD     W8,W11,W11
+06D8:  ADDC    W9,W12,W12
+06DA:  ADDC    #0,W10
+06DC:  MUL.UU  W6,W0,W8
+06DE:  ADD     W8,W11,W11
+06E0:  ADDC    W9,W12,W12
+06E2:  ADDC    #0,W10
+06E4:  CLR     W11
+06E6:  MUL.UU  W4,W3,W8
+06E8:  ADD     W8,W12,W12
+06EA:  ADDC    W9,W10,W10
+06EC:  ADDC    #0,W11
+06EE:  MUL.UU  W5,W2,W8
+06F0:  ADD     W8,W12,W12
+06F2:  ADDC    W9,W10,W10
+06F4:  ADDC    #0,W11
+06F6:  MUL.UU  W6,W1,W8
+06F8:  ADD     W8,W12,W12
+06FA:  ADDC    W9,W10,W10
+06FC:  ADDC    #0,W11
+06FE:  MUL.UU  W7,W0,W8
+0700:  ADD     W8,W12,W12
+0702:  ADDC    W9,W10,W10
+0704:  ADDC    #0,W11
+0706:  MOV     W12,W0
+0708:  CLR     W12
+070A:  MUL.UU  W5,W3,W8
+070C:  ADD     W8,W10,W10
+070E:  ADDC    W9,W11,W11
+0710:  ADDC    #0,W12
+0712:  MUL.UU  W6,W2,W8
+0714:  ADD     W8,W10,W10
+0716:  ADDC    W9,W11,W11
+0718:  ADDC    #0,W12
+071A:  MUL.UU  W6,W3,W8
+071C:  ADD     W8,W11,W11
+071E:  ADDC    W9,W12,W12
+0720:  MUL.UU  W7,W1,W8
+0722:  ADD     W8,W10,W10
+0724:  ADDC    W9,W11,W11
+0726:  ADDC    #0,W12
+0728:  MUL.UU  W7,W2,W8
+072A:  ADD     W8,W11,W11
+072C:  ADDC    W9,W12,W12
+072E:  MUL.UU  W7,W3,W8
+0730:  ADD     W8,W12,W12
+0732:  MOV     W10,W1
+0734:  MOV     W11,W2
+0736:  MOV     W12,W3
+0738:  MOV     #5,W4
+073A:  BCLR.B  42.0
+073C:  RRC     W3,W3
+073E:  RRC     W2,W2
+0740:  RRC     W1,W1
+0742:  RRC     W0,W0
+0744:  DEC     W4,W4
+0746:  BRA     NZ,73A
+0748:  MOV     [--W15],W8
+074A:  INC     W8,W8
+074C:  IOR      W0,  W1,W6
+074E:  BRA     Z,752
+0750:  BRA     756
+0752:  IOR      W2,  W3,W6
+0754:  BRA     Z,766
+0756:  BTSC    W3.4
+0758:  BRA     766
+075A:  BCLR.B  42.0
+075C:  RLC     W0,W0
+075E:  RLC     W1,W1
+0760:  RLC     W2,W2
+0762:  RLC     W3,W3
+0764:  DEC     W8,W8
+0766:  SL      W8,#4,W8
+0768:  BCLR    W3.F
+076A:  BTSC    W13.F
+076C:  BSET    W3.F
+076E:  BCLR    W3.4
+0770:  XOR     W8,W3,W3
+0772:  BRA     77A
+0774:  MUL.UU  W0,#0,W0
+0776:  MUL.UU  W0,#0,W2
+0778:  BRA     77A
+077A:  MOV     #1A,W8
+077C:  REPEAT  #4
+077E:  MOV     [--W15],[W8--]
+0780:  MOV     [--W15],W8
+0782:  RETURN  
+0784:  MOV     W5,[W15++]
+0786:  MOV     #C,W5
+0788:  REPEAT  #5
+078A:  MOV     [W5++],[W15++]
+078C:  MOV     W3,W8
+078E:  MOV     W2,W7
+0790:  MOV     W1,W6
+0792:  MOV     W0,W5
+0794:  MOV     W3,W9
+0796:  MOV     #473,W11
+0798:  ASR     W3,#4,W3
+079A:  MOV     #7FF,W10
+079C:  AND     W10,W3,W3
+079E:  SUB     W11,W3,W11
+07A0:  AND     #1F,W8
+07A2:  BSET    W8.4
+07A4:  CLR     W0
+07A6:  CLR     W1
+07A8:  CLR     W2
+07AA:  CLR     W3
+07AC:  BCLR.B  42.0
+07AE:  RRC     W8,W8
+07B0:  RRC     W7,W7
+07B2:  RRC     W6,W6
+07B4:  RRC     W5,W5
+07B6:  RRC     W3,W3
+07B8:  RRC     W2,W2
+07BA:  RRC     W1,W1
+07BC:  RRC     W0,W0
+07BE:  DEC     W11,W11
+07C0:  BRA     NZ,7AC
+07C2:  BTSS    W9.F
+07C4:  BRA     7D8
+07C6:  COM     W0,W0
+07C8:  COM     W1,W1
+07CA:  COM     W2,W2
+07CC:  COM     W3,W3
+07CE:  INC     W0,W0
+07D0:  ADDC    #0,W1
+07D2:  ADDC    #0,W2
+07D4:  ADDC    #0,W3
+07D6:  BRA     7D8
+07D8:  MOV     #16,W5
+07DA:  REPEAT  #5
+07DC:  MOV     [--W15],[W5--]
+07DE:  MOV     [--W15],W5
+07E0:  RETURN  
+07E2:  MOV     W12,[W15++]
+07E4:  MOV     W13,[W15++]
+07E6:  CLR     W8
+07E8:  CLR     W9
+07EA:  CLR     W10
+07EC:  CLR     W11
+07EE:  CLR     W12
+07F0:  CLR     W13
+07F2:  MOV     #E,W8
+07F4:  MOV     #0,W9
+07F6:  LNK     #10
+07F8:  MOV     W12,[W14+W8]
+07FA:  DEC2    W8,W8
+07FC:  BRA     NN,7F8
+07FE:  XOR     W4,W5,W8
+0800:  BRA     NZ,806
+0802:  XOR     W6,W7,W8
+0804:  BRA     Z,864
+0806:  CLR     W8
+0808:  MOV     #40,W13
+080A:  MOV     #40,W13
+080C:  BCLR.B  42.0
+080E:  RLC     W0,W0
+0810:  RLC     W1,W1
+0812:  RLC     W2,W2
+0814:  RLC     W3,W3
+0816:  RLC     W8,W8
+0818:  RLC     W9,W9
+081A:  RLC     W10,W10
+081C:  RLC     W11,W11
+081E:  CP      W11,W7
+0820:  BRA     NZ,82C
+0822:  CPB     W10,W6
+0824:  BRA     NZ,82C
+0826:  CPB     W9,W5
+0828:  BRA     NZ,82C
+082A:  CPB     W8,W4
+082C:  BRA     NC,838
+082E:  SUB     W8,W4,W8
+0830:  SUBB    W9,W5,W9
+0832:  SUBB    W10,W6,W10
+0834:  SUBB    W11,W7,W11
+0836:  BSET.B  42.0
+0838:  MOV     W8,[W14]
+083A:  MOV     W9,[W14+#2]
+083C:  MOV     W10,[W14+#4]
+083E:  MOV     W11,[W14+#6]
+0840:  MOV     [W14+#8],W8
+0842:  MOV     [W14+#A],W9
+0844:  MOV     [W14+#C],W10
+0846:  MOV     [W14+#E],W11
+0848:  RLC     W8,W8
+084A:  RLC     W9,W9
+084C:  RLC     W10,W10
+084E:  RLC     W11,W11
+0850:  MOV     W8,[W14+#8]
+0852:  MOV     W9,[W14+#A]
+0854:  MOV     W10,[W14+#C]
+0856:  MOV     W11,[W14+#E]
+0858:  MOV     [W14],W8
+085A:  MOV     [W14+#2],W9
+085C:  MOV     [W14+#4],W10
+085E:  MOV     [W14+#6],W11
+0860:  DEC     W13,W13
+0862:  BRA     NZ,80C
+0864:  MOV     [W14+#8],W0
+0866:  MOV     [W14+#A],W1
+0868:  MOV     [W14+#C],W2
+086A:  MOV     [W14+#E],W3
+086C:  ULNK    
+086E:  BRA     870
+0870:  MOV     [--W15],W13
+0872:  MOV     [--W15],W12
+0874:  RETURN  
+0876:  MOV     W5,[W15++]
+0878:  MOV     #C,W5
+087A:  REPEAT  #7
+087C:  MOV     [W5++],[W15++]
+087E:  LNK     #2A
+0880:  MOV     #28,W8
+0882:  CLR     W12
+0884:  MOV     W12,[W14+W8]
+0886:  DEC2    W8,W8
+0888:  BRA     NN,884
+088A:  MOV     W10,[W14+#28]
+088C:  CP0     W9
+088E:  BRA     Z,8AA
+0890:  MOV     W9,[W14+#26]
+0892:  MOV     #4024,W7
+0894:  CLR     W6
+0896:  MUL.UU  W4,#0,W4
+0898:  MOV     W9,[W14+#24]
+089A:  MOV     #4024,W7
+089C:  CLR     W6
+089E:  MUL.UU  W4,#0,W4
+08A0:  CALL    674
+08A4:  MOV     [W14+#24],W9
+08A6:  DEC     W9,W9
+08A8:  BRA     NZ,898
+08AA:  MOV     [W14+#26],W9
+08AC:  MOV     #14,W8
+08AE:  MOV     W8,[W14+#24]
+08B0:  MOV     #41CD,W7
+08B2:  MOV     #CD65,W6
+08B4:  MUL.UU  W4,#0,W4
+08B6:  MOV     W0,[W14+#10]
+08B8:  MOV     W1,[W14+#12]
+08BA:  MOV     W2,[W14+#14]
+08BC:  MOV     W3,[W14+#16]
+08BE:  MOV     #14,W8
+08C0:  MOV     W8,[W14+#20]
+08C2:  MOV     #0,W4
+08C4:  MOV     #89E8,W5
+08C6:  MOV     #2304,W6
+08C8:  MOV     #8AC7,W7
+08CA:  MOV     W4,[W14+#18]
+08CC:  MOV     W5,[W14+#1A]
+08CE:  MOV     W6,[W14+#1C]
+08D0:  MOV     W7,[W14+#1E]
+08D2:  BTSS    W3.F
+08D4:  BRA     8DE
+08D6:  MOV     [W14+#28],W8
+08D8:  DEC     W8,W8
+08DA:  BSET    W8.D
+08DC:  MOV     W8,[W14+#28]
+08DE:  BCLR    W3.F
+08E0:  CALL    784
+08E4:  MOV     [W14+#28],W8
+08E6:  MOV     [W14+#26],W9
+08E8:  CP0     W9
+08EA:  BTSC.B  42.1
+08EC:  INC.B   W8L,W8L
+08EE:  MOV     W8,[W14+#28]
+08F0:  MOV     [W14+#22],W9
+08F2:  CLR     W9
+08F4:  MOV     W9,[W14+#22]
+08F6:  MOV     [W14+#18],W4
+08F8:  MOV     [W14+#1A],W5
+08FA:  MOV     [W14+#1C],W6
+08FC:  MOV     [W14+#1E],W7
+08FE:  CALL    7E2
+0902:  MOV     [W14+#22],W13
+0904:  BTSC    W13.0
+0906:  BRA     9EC
+0908:  MOV     W8,[W14+#10]
+090A:  MOV     W9,[W14+#12]
+090C:  MOV     W10,[W14+#14]
+090E:  MOV     W11,[W14+#16]
+0910:  MOV     [W14+#22],W13
+0912:  BTG     W13.0
+0914:  MOV     W13,[W14+#22]
+0916:  CP0     W0
+0918:  BRA     NZ,93E
+091A:  MOV     [W14+#26],W9
+091C:  INC     W9,W9
+091E:  MOV     [W14+#24],W10
+0920:  SUB     W10,W9,W8
+0922:  BRA     Z,93E
+0924:  MOV     [W14+#28],W11
+0926:  CP0     W11
+0928:  BRA     Z,946
+092A:  AND     W11,#1F,W8
+092C:  SUB     W10,W8,W8
+092E:  BRA     Z,932
+0930:  BRA     C,9D4
+0932:  BTSC    W11.F
+0934:  BRA     9D4
+0936:  BTSC    W11.E
+0938:  BRA     946
+093A:  MOV     #20,W0
+093C:  BRA     9C4
+093E:  MOV     [W14+#28],W11
+0940:  MOV     #2000,W12
+0942:  AND     W12,W11,W11
+0944:  MOV     W11,[W14+#28]
+0946:  MOV     [W14+#28],W11
+0948:  BTSS    W11.D
+094A:  BRA     972
+094C:  BCLR    W11.D
+094E:  MOV     [W14+#26],W9
+0950:  CP0     W9
+0952:  BTSS.B  42.1
+0954:  DEC     W11,W11
+0956:  CLR     W11
+0958:  MOV     W11,[W14+#28]
+095A:  MOV     W0,W10
+095C:  MOV     W1,[W15++]
+095E:  MOV     W4,[W15++]
+0960:  MOV.B   #2D,W0L
+0962:  MOV.B   W0L,826
+0964:  CALL    65C
+0968:  MOV     [--W15],W4
+096A:  MOV     [--W15],W1
+096C:  MOV     W10,W0
+096E:  CLR     W11
+0970:  MOV     W11,[W14+#28]
+0972:  MOV     [W14+#26],W9
+0974:  MOV     [W14+#24],W10
+0976:  SUB     W10,W9,W8
+0978:  BRA     NZ,99A
+097A:  CLR     W11
+097C:  MOV     W11,[W14+#28]
+097E:  MOV     W0,W10
+0980:  MOV     W1,[W15++]
+0982:  MOV     W4,[W15++]
+0984:  MOV.B   #2E,W0L
+0986:  MOV.B   W0L,826
+0988:  CALL    65C
+098C:  MOV     [--W15],W4
+098E:  MOV     [--W15],W1
+0990:  MOV     [W14+#28],W11
+0992:  MOV     #2000,W12
+0994:  AND     W12,W11,W11
+0996:  MOV     W11,[W14+#28]
+0998:  MOV     W10,W0
+099A:  MOV     #30,W1
+099C:  MOV     [W14+#28],W11
+099E:  BTSS    W11.D
+09A0:  BRA     9C4
+09A2:  BCLR    W11.D
+09A4:  MOV     [W14+#26],W9
+09A6:  CP0     W9
+09A8:  BTSS.B  42.1
+09AA:  DEC     W11,W11
+09AC:  CLR     W11
+09AE:  MOV     W11,[W14+#28]
+09B0:  MOV     W1,[W15++]
+09B2:  MOV     W4,[W15++]
+09B4:  MOV.B   #2D,W0L
+09B6:  MOV.B   W0L,826
+09B8:  CALL    65C
+09BC:  MOV     [--W15],W4
+09BE:  MOV     [--W15],W1
+09C0:  CLR     W0
+09C2:  MOV     #30,W1
+09C4:  ADD     W1,W0,W0
+09C6:  MOV     W1,[W15++]
+09C8:  MOV     W4,[W15++]
+09CA:  MOV.B   W0L,826
+09CC:  CALL    65C
+09D0:  MOV     [--W15],W4
+09D2:  MOV     [--W15],W1
+09D4:  MOV     [W14+#24],W13
+09D6:  DEC     W13,W13
+09D8:  BRA     Z,A0C
+09DA:  MOV     W13,[W14+#24]
+09DC:  MOV     [W14+#18],W0
+09DE:  MOV     [W14+#1A],W1
+09E0:  MOV     [W14+#1C],W2
+09E2:  MOV     [W14+#1E],W3
+09E4:  MOV     #A,W4
+09E6:  CLR     W5
+09E8:  MUL.UU  W6,#0,W6
+09EA:  BRA     8FE
+09EC:  MOV     W0,[W14+#18]
+09EE:  MOV     W1,[W14+#1A]
+09F0:  MOV     W2,[W14+#1C]
+09F2:  MOV     W3,[W14+#1E]
+09F4:  MOV     W0,W4
+09F6:  MOV     W1,W5
+09F8:  MOV     W2,W6
+09FA:  MOV     W3,W7
+09FC:  MOV     [W14+#10],W0
+09FE:  MOV     [W14+#12],W1
+0A00:  MOV     [W14+#14],W2
+0A02:  MOV     [W14+#16],W3
+0A04:  MOV     [W14+#22],W13
+0A06:  BTG     W13.0
+0A08:  MOV     W13,[W14+#22]
+0A0A:  BRA     8FE
+0A0C:  ULNK    
+0A0E:  MOV     #1A,W5
+0A10:  REPEAT  #7
+0A12:  MOV     [--W15],[W5--]
+0A14:  MOV     [--W15],W5
+0A16:  RETURN  
+0A18:  MOV     W5,[W15++]
+0A1A:  MOV     #C,W5
+0A1C:  REPEAT  #7
+0A1E:  MOV     [W5++],[W15++]
+0A20:  LNK     #2A
+0A22:  MOV     #28,W8
+0A24:  CLR     W12
+0A26:  MOV     W12,[W14+W8]
+0A28:  DEC2    W8,W8
+0A2A:  BRA     NN,A26
+0A2C:  MOV     W10,[W14+#28]
+0A2E:  CP0     W9
+0A30:  BRA     Z,A4C
+0A32:  MOV     W9,[W14+#26]
+0A34:  MOV     #4024,W7
+0A36:  CLR     W6
+0A38:  MUL.UU  W4,#0,W4
+0A3A:  MOV     W9,[W14+#24]
+0A3C:  MOV     #4024,W7
+0A3E:  CLR     W6
+0A40:  MUL.UU  W4,#0,W4
+0A42:  CALL    674
+0A46:  MOV     [W14+#24],W9
+0A48:  DEC     W9,W9
+0A4A:  BRA     NZ,A3A
+0A4C:  MOV     [W14+#26],W9
+0A4E:  MOV     #14,W8
+0A50:  MOV     W8,[W14+#24]
+0A52:  MOV     #41CD,W7
+0A54:  MOV     #CD65,W6
+0A56:  MUL.UU  W4,#0,W4
+0A58:  MOV     W0,[W14+#10]
+0A5A:  MOV     W1,[W14+#12]
+0A5C:  MOV     W2,[W14+#14]
+0A5E:  MOV     W3,[W14+#16]
+0A60:  MOV     #14,W8
+0A62:  MOV     W8,[W14+#20]
+0A64:  MOV     #0,W4
+0A66:  MOV     #89E8,W5
+0A68:  MOV     #2304,W6
+0A6A:  MOV     #8AC7,W7
+0A6C:  MOV     W4,[W14+#18]
+0A6E:  MOV     W5,[W14+#1A]
+0A70:  MOV     W6,[W14+#1C]
+0A72:  MOV     W7,[W14+#1E]
+0A74:  BTSS    W3.F
+0A76:  BRA     A80
+0A78:  MOV     [W14+#28],W8
+0A7A:  DEC     W8,W8
+0A7C:  BSET    W8.D
+0A7E:  MOV     W8,[W14+#28]
+0A80:  BCLR    W3.F
+0A82:  CALL    784
+0A86:  MOV     [W14+#28],W8
+0A88:  MOV     [W14+#26],W9
+0A8A:  CP0     W9
+0A8C:  BTSC.B  42.1
+0A8E:  INC.B   W8L,W8L
+0A90:  MOV     W8,[W14+#28]
+0A92:  MOV     [W14+#22],W9
+0A94:  CLR     W9
+0A96:  MOV     W9,[W14+#22]
+0A98:  MOV     [W14+#18],W4
+0A9A:  MOV     [W14+#1A],W5
+0A9C:  MOV     [W14+#1C],W6
+0A9E:  MOV     [W14+#1E],W7
+0AA0:  CALL    7E2
+0AA4:  MOV     [W14+#22],W13
+0AA6:  BTSC    W13.0
+0AA8:  BRA     B6E
+0AAA:  MOV     W8,[W14+#10]
+0AAC:  MOV     W9,[W14+#12]
+0AAE:  MOV     W10,[W14+#14]
+0AB0:  MOV     W11,[W14+#16]
+0AB2:  MOV     [W14+#22],W13
+0AB4:  BTG     W13.0
+0AB6:  MOV     W13,[W14+#22]
+0AB8:  CP0     W0
+0ABA:  BRA     NZ,AE0
+0ABC:  MOV     [W14+#26],W9
+0ABE:  INC     W9,W9
+0AC0:  MOV     [W14+#24],W10
+0AC2:  SUB     W10,W9,W8
+0AC4:  BRA     Z,AE0
+0AC6:  MOV     [W14+#28],W11
+0AC8:  CP0     W11
+0ACA:  BRA     Z,AE8
+0ACC:  AND     W11,#1F,W8
+0ACE:  SUB     W10,W8,W8
+0AD0:  BRA     Z,AD4
+0AD2:  BRA     C,B56
+0AD4:  BTSC    W11.F
+0AD6:  BRA     B56
+0AD8:  BTSC    W11.E
+0ADA:  BRA     AE8
+0ADC:  MOV     #20,W0
+0ADE:  BRA     B4E
+0AE0:  MOV     [W14+#28],W11
+0AE2:  MOV     #2000,W12
+0AE4:  AND     W12,W11,W11
+0AE6:  MOV     W11,[W14+#28]
+0AE8:  MOV     [W14+#28],W11
+0AEA:  BTSS    W11.D
+0AEC:  BRA     B0C
+0AEE:  BCLR    W11.D
+0AF0:  MOV     [W14+#26],W9
+0AF2:  CP0     W9
+0AF4:  BTSS.B  42.1
+0AF6:  DEC     W11,W11
+0AF8:  CLR     W11
+0AFA:  MOV     W11,[W14+#28]
+0AFC:  MOV     W0,W10
+0AFE:  BTSS.B  233.0
+0B00:  BRA     AFE
+0B02:  MOV     #2D,W4
+0B04:  MOV     W4,234
+0B06:  MOV     W10,W0
+0B08:  CLR     W11
+0B0A:  MOV     W11,[W14+#28]
+0B0C:  MOV     [W14+#26],W9
+0B0E:  MOV     [W14+#24],W10
+0B10:  SUB     W10,W9,W8
+0B12:  BRA     NZ,B2C
+0B14:  CLR     W11
+0B16:  MOV     W11,[W14+#28]
+0B18:  MOV     W0,W10
+0B1A:  BTSS.B  233.0
+0B1C:  BRA     B1A
+0B1E:  MOV     #2E,W4
+0B20:  MOV     W4,234
+0B22:  MOV     [W14+#28],W11
+0B24:  MOV     #2000,W12
+0B26:  AND     W12,W11,W11
+0B28:  MOV     W11,[W14+#28]
+0B2A:  MOV     W10,W0
+0B2C:  MOV     #30,W1
+0B2E:  MOV     [W14+#28],W11
+0B30:  BTSS    W11.D
+0B32:  BRA     B4E
+0B34:  BCLR    W11.D
+0B36:  MOV     [W14+#26],W9
+0B38:  CP0     W9
+0B3A:  BTSS.B  42.1
+0B3C:  DEC     W11,W11
+0B3E:  CLR     W11
+0B40:  MOV     W11,[W14+#28]
+0B42:  BTSS.B  233.0
+0B44:  BRA     B42
+0B46:  MOV     #2D,W4
+0B48:  MOV     W4,234
+0B4A:  CLR     W0
+0B4C:  MOV     #30,W1
+0B4E:  ADD     W1,W0,W0
+0B50:  BTSS.B  233.0
+0B52:  BRA     B50
+0B54:  MOV     W0,234
+0B56:  MOV     [W14+#24],W13
+0B58:  DEC     W13,W13
+0B5A:  BRA     Z,B8E
+0B5C:  MOV     W13,[W14+#24]
+0B5E:  MOV     [W14+#18],W0
+0B60:  MOV     [W14+#1A],W1
+0B62:  MOV     [W14+#1C],W2
+0B64:  MOV     [W14+#1E],W3
+0B66:  MOV     #A,W4
+0B68:  CLR     W5
+0B6A:  MUL.UU  W6,#0,W6
+0B6C:  BRA     AA0
+0B6E:  MOV     W0,[W14+#18]
+0B70:  MOV     W1,[W14+#1A]
+0B72:  MOV     W2,[W14+#1C]
+0B74:  MOV     W3,[W14+#1E]
+0B76:  MOV     W0,W4
+0B78:  MOV     W1,W5
+0B7A:  MOV     W2,W6
+0B7C:  MOV     W3,W7
+0B7E:  MOV     [W14+#10],W0
+0B80:  MOV     [W14+#12],W1
+0B82:  MOV     [W14+#14],W2
+0B84:  MOV     [W14+#16],W3
+0B86:  MOV     [W14+#22],W13
+0B88:  BTG     W13.0
+0B8A:  MOV     W13,[W14+#22]
+0B8C:  BRA     AA0
+0B8E:  ULNK    
+0B90:  MOV     #1A,W5
+0B92:  REPEAT  #7
+0B94:  MOV     [--W15],[W5--]
+0B96:  MOV     [--W15],W5
+0B98:  RETURN  
+0B9A:  MOV     W8,[W15++]
+0B9C:  MOV     W9,[W15++]
+0B9E:  MOV     W10,[W15++]
+0BA0:  XOR     W3,W7,W9
+0BA2:  BTSS    W9.F
+0BA4:  BRA     BB2
+0BA6:  BCLR.B  42.0
+0BA8:  BCLR.B  42.1
+0BAA:  BTSS    W3.F
+0BAC:  BRA     C16
+0BAE:  BSET.B  42.0
+0BB0:  BRA     C16
+0BB2:  MOV     #7FF,W10
+0BB4:  MOV     W3,W8
+0BB6:  MOV     W7,W9
+0BB8:  ASR     W8,#4,W8
+0BBA:  AND     W10,W8,W8
+0BBC:  ASR     W9,#4,W9
+0BBE:  AND     W10,W9,W9
+0BC0:  SUB     W9,W8,W10
+0BC2:  BRA     Z,BCE
+0BC4:  BTSS    W3.F
+0BC6:  BRA     C16
+0BC8:  MOV     #1,W0
+0BCA:  XOR.B   42
+0BCC:  BRA     C16
+0BCE:  MOV     W3,W8
+0BD0:  MOV     W7,W9
+0BD2:  AND     #1F,W3
+0BD4:  AND     #1F,W7
+0BD6:  BCLR    W3.4
+0BD8:  BCLR    W7.4
+0BDA:  SUB.B   W7L,W3L,W10L
+0BDC:  BRA     Z,BE8
+0BDE:  BTSS    W8.F
+0BE0:  BRA     C16
+0BE2:  MOV     #1,W0
+0BE4:  XOR.B   42
+0BE6:  BRA     C16
+0BE8:  SUB     W6,W2,W10
+0BEA:  BRA     Z,BF6
+0BEC:  BTSS    W8.F
+0BEE:  BRA     C16
+0BF0:  MOV     #1,W0
+0BF2:  XOR.B   42
+0BF4:  BRA     C16
+0BF6:  SUB     W5,W1,W10
+0BF8:  BRA     Z,C04
+0BFA:  BTSS    W8.F
+0BFC:  BRA     C16
+0BFE:  MOV     #1,W0
+0C00:  XOR.B   42
+0C02:  BRA     C16
+0C04:  SUB     W4,W0,W10
+0C06:  BRA     Z,C12
+0C08:  BTSS    W8.F
+0C0A:  BRA     C16
+0C0C:  MOV     #1,W0
+0C0E:  XOR.B   42
+0C10:  BRA     C16
+0C12:  BCLR.B  42.0
+0C14:  BRA     C16
+0C16:  MOV     [--W15],W10
+0C18:  MOV     [--W15],W9
+0C1A:  MOV     [--W15],W8
+0C1C:  RETURN  
+0C1E:  MOV     W5,[W15++]
+0C20:  MOV     #C,W5
+0C22:  REPEAT  #3
+0C24:  MOV     [W5++],[W15++]
+0C26:  MOV     W0,W4
+0C28:  MOV     W1,W5
+0C2A:  MOV     W2,W6
+0C2C:  MOV     W3,W7
+0C2E:  CLR     W0
+0C30:  CLR     W1
+0C32:  CLR     W2
+0C34:  CLR     W3
+0C36:  BCLR    W8.0
+0C38:  BTSS    W7.F
+0C3A:  BRA     C4C
+0C3C:  BSET    W8.0
+0C3E:  COM     W7,W7
+0C40:  COM     W6,W6
+0C42:  COM     W5,W5
+0C44:  NEG     W4,W4
+0C46:  ADDC    W5,#0,W5
+0C48:  ADDC    W6,#0,W6
+0C4A:  ADDC    W7,#0,W7
+0C4C:  IOR      W4,  W5,W9
+0C4E:  BRA     NZ,C54
+0C50:  IOR      W6,  W7,W9
+0C52:  BRA     Z,C7E
+0C54:  MOV     #473,W9
+0C56:  BTSC    W3.4
+0C58:  BRA     C70
+0C5A:  BCLR.B  42.0
+0C5C:  RLC     W4,W4
+0C5E:  RLC     W5,W5
+0C60:  RLC     W6,W6
+0C62:  RLC     W7,W7
+0C64:  RLC     W0,W0
+0C66:  RLC     W1,W1
+0C68:  RLC     W2,W2
+0C6A:  RLC     W3,W3
+0C6C:  DEC     W9,W9
+0C6E:  BRA     NZ,C56
+0C70:  SL      W9,#4,W9
+0C72:  BCLR.B  42.0
+0C74:  BCLR    W9.F
+0C76:  BCLR    W3.4
+0C78:  XOR     W9,W3,W3
+0C7A:  BTSC    W8.0
+0C7C:  BSET    W3.F
+0C7E:  MOV     #12,W5
+0C80:  REPEAT  #3
+0C82:  MOV     [--W15],[W5--]
+0C84:  MOV     [--W15],W5
+0C86:  RETURN  
+0C88:  MOV     W8,[W15++]
+0C8A:  MOV     #12,W8
+0C8C:  REPEAT  #4
+0C8E:  MOV     [W8++],[W15++]
+0C90:  MOV     #8000,W8
+0C92:  BTSC.B  43.0
+0C94:  XOR     W8,W7,W7
+0C96:  CP0     W0
+0C98:  BRA     NZ,CA8
+0C9A:  CP0     W1
+0C9C:  BRA     NZ,CA8
+0C9E:  CP0     W2
+0CA0:  BRA     NZ,CA8
+0CA2:  MOV     #7FFF,W10
+0CA4:  AND     W3,W10,W10
+0CA6:  BTSS.B  42.1
+0CA8:  MOV     W3,W10
+0CAA:  XOR     W7,W10,W11
+0CAC:  MOV     W3,W8
+0CAE:  MOV     W7,W9
+0CB0:  MOV     W7,W12
+0CB2:  MOV     #7FF,W13
+0CB4:  BCLR.B  42.1
+0CB6:  BCLR.B  42.0
+0CB8:  ASR     W8,#4,W8
+0CBA:  AND     W13,W8,W8
+0CBC:  CP0     W8
+0CBE:  BRA     Z,E38
+0CC0:  BCLR.B  42.1
+0CC2:  BCLR.B  42.0
+0CC4:  ASR     W9,#4,W9
+0CC6:  AND     W13,W9,W9
+0CC8:  CP0     W9
+0CCA:  BRA     Z,E48
+0CCC:  CLR     W13
+0CCE:  BCLR.B  42.1
+0CD0:  BCLR.B  42.0
+0CD2:  CP      W9,W8
+0CD4:  BRA     Z,E4A
+0CD6:  BRA     N,E5A
+0CD8:  BCLR    W13.0
+0CDA:  BSET    W13.1
+0CDC:  SUB     W9,W8,W8
+0CDE:  AND     #F,W3
+0CE0:  BSET    W3.4
+0CE2:  AND     #F,W7
+0CE4:  BSET    W7.4
+0CE6:  SUB     #34,W8
+0CE8:  BRA     NN,D16
+0CEA:  ADD     #34,W8
+0CEC:  BCLR.B  42.1
+0CEE:  BCLR.B  42.0
+0CF0:  RRC     W3,W3
+0CF2:  RRC     W2,W2
+0CF4:  RRC     W1,W1
+0CF6:  RRC     W0,W0
+0CF8:  DEC     W8,W8
+0CFA:  BRA     NZ,CEC
+0CFC:  BRA     D26
+0CFE:  SUB     #34,W8
+0D00:  BRA     NN,D20
+0D02:  ADD     #34,W8
+0D04:  BCLR.B  42.1
+0D06:  BCLR.B  42.0
+0D08:  RRC     W7,W7
+0D0A:  RRC     W6,W6
+0D0C:  RRC     W5,W5
+0D0E:  RRC     W4,W4
+0D10:  DEC     W8,W8
+0D12:  BRA     NZ,D04
+0D14:  BRA     D4C
+0D16:  MOV     W4,W0
+0D18:  MOV     W5,W1
+0D1A:  MOV     W6,W2
+0D1C:  MOV     W7,W3
+0D1E:  XOR     W11,W12,W12
+0D20:  BTSC    W12.F
+0D22:  BTG     W11.F
+0D24:  BRA     E18
+0D26:  BTSS    W11.F
+0D28:  BRA     D68
+0D2A:  BTSC    W13.4
+0D2C:  MOV     W12,W11
+0D2E:  COM     W0,W0
+0D30:  COM     W1,W1
+0D32:  COM     W2,W2
+0D34:  COM.B   W3L,W3L
+0D36:  AND.B   #1F,W3L
+0D38:  INC     W0,W0
+0D3A:  BRA     NZ,D46
+0D3C:  INC     W1,W1
+0D3E:  BRA     NZ,D46
+0D40:  INC     W2,W2
+0D42:  BRA     NZ,D46
+0D44:  INC.B   W3L,W3L
+0D46:  BTSC    W13.4
+0D48:  BRA     DAE
+0D4A:  BRA     D68
+0D4C:  BTSS    W11.F
+0D4E:  BRA     D68
+0D50:  COM     W4,W4
+0D52:  COM     W5,W5
+0D54:  COM     W6,W6
+0D56:  COM.B   W7L,W7L
+0D58:  AND.B   #1F,W7L
+0D5A:  INC     W4,W4
+0D5C:  BRA     NZ,D68
+0D5E:  INC     W5,W5
+0D60:  BRA     NZ,D68
+0D62:  INC     W6,W6
+0D64:  BRA     NZ,D68
+0D66:  INC.B   W7L,W7L
+0D68:  BCLR.B  42.1
+0D6A:  BCLR.B  42.0
+0D6C:  ADD     W0,W4,W0
+0D6E:  ADDC    W1,W5,W1
+0D70:  ADDC    W2,W6,W2
+0D72:  ADDC.B  W3L,W7L,W3L
+0D74:  BTSC    W3.5
+0D76:  BSET    W13.3
+0D78:  BTSC    W13.0
+0D7A:  BRA     D8E
+0D7C:  BTSC    W13.1
+0D7E:  BRA     D82
+0D80:  BRA     D98
+0D82:  BTSC    W11.F
+0D84:  BRA     DAE
+0D86:  BTSC    W13.3
+0D88:  BRA     DDC
+0D8A:  BSET    W13.6
+0D8C:  BRA     DD0
+0D8E:  BTSC    W11.F
+0D90:  BRA     DAE
+0D92:  BTSC    W13.3
+0D94:  BRA     DDC
+0D96:  BRA     DD0
+0D98:  BTSC    W11.F
+0D9A:  BRA     DA4
+0D9C:  MOV     W10,W11
+0D9E:  BTSC    W13.3
+0DA0:  BRA     DDC
+0DA2:  BRA     E18
+0DA4:  BSET    W13.4
+0DA6:  XOR.B   #10,W3L
+0DA8:  BTSC    W3.4
+0DAA:  BRA     D2A
+0DAC:  MOV     W10,W11
+0DAE:  AND     #1F,W3
+0DB0:  IOR      W3,  W2,W8
+0DB2:  BRA     NZ,DB8
+0DB4:  IOR      W1,  W0,W8
+0DB6:  BRA     Z,DD0
+0DB8:  BTSC    W3.4
+0DBA:  BRA     DD0
+0DBC:  BCLR.B  42.1
+0DBE:  BCLR.B  42.0
+0DC0:  RLC     W0,W0
+0DC2:  RLC     W1,W1
+0DC4:  RLC     W2,W2
+0DC6:  RLC     W3,W3
+0DC8:  DEC     W9,W9
+0DCA:  BTSC.B  42.1
+0DCC:  BRA     E32
+0DCE:  BRA     DB8
+0DD0:  BTSC    W13.0
+0DD2:  MOV     W10,W11
+0DD4:  BTSC    W13.1
+0DD6:  MOV     W12,W11
+0DD8:  BTSS    W13.5
+0DDA:  BRA     E18
+0DDC:  BCLR.B  42.0
+0DDE:  RRC.B   W3L,W3L
+0DE0:  RRC     W2,W2
+0DE2:  RRC     W1,W1
+0DE4:  RRC     W0,W0
+0DE6:  BTSC.B  42.0
+0DE8:  BSET    W13.5
+0DEA:  INC     W9,W9
+0DEC:  BTSC.B  42.1
+0DEE:  BRA     E32
+0DF0:  BTSS    W13.5
+0DF2:  BRA     E10
+0DF4:  INC     W0,W0
+0DF6:  BRA     NZ,E10
+0DF8:  INC     W1,W1
+0DFA:  BRA     NZ,E10
+0DFC:  INC     W2,W2
+0DFE:  BRA     NZ,E10
+0E00:  INC     W3,W3
+0E02:  BRA     NZ,E10
+0E04:  RRC.B   W3L,W3L
+0E06:  RRC     W2,W2
+0E08:  RRC     W1,W1
+0E0A:  RRC     W0,W0
+0E0C:  INC     W9,W9
+0E0E:  BRA     Z,E32
+0E10:  BTSC    W13.0
+0E12:  MOV     W10,W11
+0E14:  BTSC    W13.1
+0E16:  MOV     W12,W11
+0E18:  IOR      W0,  W1,W4
+0E1A:  BRA     NZ,E20
+0E1C:  IOR      W2,  W3,W4
+0E1E:  BRA     Z,E6C
+0E20:  BCLR    W3.4
+0E22:  BCLR.B  42.1
+0E24:  BCLR.B  42.0
+0E26:  SL      W9,#4,W9
+0E28:  XOR     W9,W3,W3
+0E2A:  BSET    W3.F
+0E2C:  BTSS    W11.F
+0E2E:  BCLR    W3.F
+0E30:  BRA     E6C
+0E32:  MUL.UU  W0,#0,W0
+0E34:  MUL.UU  W2,#0,W2
+0E36:  BRA     E6C
+0E38:  MOV     #8000,W8
+0E3A:  BTSC    W10.F
+0E3C:  XOR     W8,W7,W7
+0E3E:  MOV     W5,W1
+0E40:  MOV     W4,W0
+0E42:  MOV     W6,W2
+0E44:  MOV     W7,W3
+0E46:  BRA     E6C
+0E48:  BRA     E6C
+0E4A:  AND     #F,W7
+0E4C:  BSET    W7.4
+0E4E:  AND     #F,W3
+0E50:  BSET    W3.4
+0E52:  BTSC    W11.F
+0E54:  BCLR    W7.4
+0E56:  BSET    W13.2
+0E58:  BRA     D4C
+0E5A:  AND     #F,W3
+0E5C:  BSET    W3.4
+0E5E:  AND     #F,W7
+0E60:  BSET    W7.4
+0E62:  SUB     W8,W9,W8
+0E64:  ADD     W8,W9,W9
+0E66:  BCLR    W13.1
+0E68:  BSET    W13.0
+0E6A:  BRA     CFE
+0E6C:  MOV     #1A,W8
+0E6E:  REPEAT  #4
+0E70:  MOV     [--W15],[W8--]
+0E72:  MOV     [--W15],W8
+0E74:  RETURN  
+0E76:  MOV     W5,[W15++]
+0E78:  MOV     W6,[W15++]
+0E7A:  MOV     W3,W4
+0E7C:  MOV     W3,W6
+0E7E:  BCLR.B  42.0
+0E80:  ASR     W4,#4,W4
+0E82:  MOV     #7FF,W5
+0E84:  AND     W5,W4,W4
+0E86:  BRA     NZ,E8E
+0E88:  MUL.UU  W0,#0,W0
+0E8A:  CLR     W2
+0E8C:  BRA     EB4
+0E8E:  SUB     #380,W4
+0E90:  AND     #F,W3
+0E92:  MOV     #3,W7
+0E94:  BCLR.B  42.0
+0E96:  RLC     W0,W0
+0E98:  RLC     W1,W1
+0E9A:  RLC     W2,W2
+0E9C:  RLC     W3,W3
+0E9E:  DEC     W7,W7
+0EA0:  BRA     NZ,E94
+0EA2:  MOV     W1,W0
+0EA4:  MOV     W2,W1
+0EA6:  BCLR    W3.7
+0EA8:  SWAP    W4
+0EAA:  BCLR.B  42.0
+0EAC:  RRC     W4,W4
+0EAE:  BTSC    W6.F
+0EB0:  BSET    W4.F
+0EB2:  XOR     W4,W3,W2
+0EB4:  MOV     [--W15],W6
+0EB6:  MOV     [--W15],W5
+0EB8:  RETURN  
+0EBA:  MOV     W5,[W15++]
+0EBC:  MOV     W6,[W15++]
+0EBE:  MOV     W2,W3
+0EC0:  MOV     W2,W5
+0EC2:  BCLR.B  42.0
+0EC4:  RLC     W3,W3
+0EC6:  SWAP    W3
+0EC8:  AND     #FF,W3
+0ECA:  BRA     NZ,ED2
+0ECC:  MUL.UU  W0,#0,W0
+0ECE:  MUL.UU  W2,#0,W2
+0ED0:  BRA     EFE
+0ED2:  ADD     #380,W3
+0ED4:  AND     #7F,W2
+0ED6:  MOV     #3,W6
+0ED8:  CLR     W4
+0EDA:  BCLR.B  42.0
+0EDC:  RRC     W2,W2
+0EDE:  RRC     W1,W1
+0EE0:  RRC     W0,W0
+0EE2:  BTSC.B  42.0
+0EE4:  INC     W4,W4
+0EE6:  DEC     W6,W6
+0EE8:  BRA     NZ,EDA
+0EEA:  BCLR    W2.7
+0EEC:  SL      W3,#4,W3
+0EEE:  BCLR    W3.F
+0EF0:  BTSC    W5.F
+0EF2:  BSET    W3.F
+0EF4:  XOR     W2,W3,W3
+0EF6:  MOV     W1,W2
+0EF8:  MOV     W0,W1
+0EFA:  ADD     W4,W1,W1
+0EFC:  CLR     W0
+0EFE:  MOV     [--W15],W6
+0F00:  MOV     [--W15],W5
+0F02:  RETURN  
+0F04:  MOV     W8,[W15++]
+0F06:  MOV     #12,W8
+0F08:  REPEAT  #4
+0F0A:  MOV     [W8++],[W15++]
+0F0C:  XOR     W3,W7,W13
+0F0E:  MOV     W3,W8
+0F10:  MOV     W7,W9
+0F12:  MOV     #7FF,W10
+0F14:  BCLR.B  42.0
+0F16:  BCLR.B  42.1
+0F18:  ASR     W8,#4,W8
+0F1A:  AND     W10,W8,W8
+0F1C:  CP0     W8
+0F1E:  BRA     Z,FF8
+0F20:  BCLR.B  42.0
+0F22:  BCLR.B  42.1
+0F24:  ASR     W9,#4,W9
+0F26:  AND     W10,W9,W9
+0F28:  CP0     W9
+0F2A:  BRA     Z,FF8
+0F2C:  CLR     W10
+0F2E:  SUB     W8,W9,W12
+0F30:  BRA     NC,F38
+0F32:  ADD     #3FF,W12
+0F34:  BRA     C,FF8
+0F36:  BRA     F40
+0F38:  MOV     #401,W11
+0F3A:  SUB     W12,W11,W12
+0F3C:  BRA     NC,FF8
+0F3E:  BRA     Z,FF8
+0F40:  CLR     W8
+0F42:  CLR     W9
+0F44:  CLR     W10
+0F46:  CLR     W11
+0F48:  AND     #1F,W3
+0F4A:  BSET    W3.4
+0F4C:  AND     #1F,W7
+0F4E:  BSET    W7.4
+0F50:  MOV     W12,[W15++]
+0F52:  MOV     #36,W12
+0F54:  SUB     W0,W4,W0
+0F56:  SUBB    W1,W5,W1
+0F58:  SUBB    W2,W6,W2
+0F5A:  SUBB    W3,W7,W3
+0F5C:  BRA     N,F62
+0F5E:  BRA     C,F6C
+0F60:  BRA     NZ,F6E
+0F62:  ADD     W0,W4,W0
+0F64:  ADDC    W1,W5,W1
+0F66:  ADDC    W2,W6,W2
+0F68:  ADDC    W3,W7,W3
+0F6A:  BRA     F6E
+0F6C:  BSET    W8.0
+0F6E:  DEC     W12,W12
+0F70:  BRA     Z,F88
+0F72:  BCLR.B  42.0
+0F74:  RLC     W0,W0
+0F76:  RLC     W1,W1
+0F78:  RLC     W2,W2
+0F7A:  RLC     W3,W3
+0F7C:  BCLR.B  42.0
+0F7E:  RLC     W8,W8
+0F80:  RLC     W9,W9
+0F82:  RLC     W10,W10
+0F84:  RLC     W11,W11
+0F86:  BRA     F54
+0F88:  MOV     [--W15],W12
+0F8A:  BTSC    W11.5
+0F8C:  BRA     F90
+0F8E:  BRA     F9C
+0F90:  BCLR.B  42.0
+0F92:  RRC     W11,W11
+0F94:  RRC     W10,W10
+0F96:  RRC     W9,W9
+0F98:  RRC     W8,W8
+0F9A:  BRA     FA2
+0F9C:  DEC     W12,W12
+0F9E:  BCLR.B  42.0
+0FA0:  BRA     Z,FF8
+0FA2:  BTSC.B  42.0
+0FA4:  BRA     FB8
+0FA6:  RLC     W0,W0
+0FA8:  RLC     W1,W1
+0FAA:  RLC     W2,W2
+0FAC:  RLC     W3,W3
+0FAE:  SUB     W0,W4,W4
+0FB0:  SUBB    W1,W5,W5
+0FB2:  SUBB    W2,W6,W6
+0FB4:  SUBB    W3,W7,W7
+0FB6:  BRA     NC,FE2
+0FB8:  INC     W8,W8
+0FBA:  BRA     NZ,FE2
+0FBC:  INC     W9,W9
+0FBE:  BRA     NZ,FE2
+0FC0:  INC     W10,W10
+0FC2:  BRA     NZ,FE2
+0FC4:  INC     W11,W11
+0FC6:  BRA     NZ,FE2
+0FC8:  INC     W12,W12
+0FCA:  BRA     Z,FF8
+0FCC:  BRA     FE2
+0FCE:  DEC     W12,W12
+0FD0:  BRA     Z,FF8
+0FD2:  BTSC    W11.4
+0FD4:  BRA     FE2
+0FD6:  BCLR.B  42.0
+0FD8:  RLC     W8,W8
+0FDA:  RLC     W9,W9
+0FDC:  RLC     W10,W10
+0FDE:  RLC     W11,W11
+0FE0:  BRA     FD2
+0FE2:  SL      W12,#4,W12
+0FE4:  BCLR.B  42.0
+0FE6:  BCLR    W12.F
+0FE8:  BTSC    W13.F
+0FEA:  BSET    W12.F
+0FEC:  BCLR    W11.4
+0FEE:  XOR     W12,W11,W3
+0FF0:  MOV     W10,W2
+0FF2:  MOV     W9,W1
+0FF4:  MOV     W8,W0
+0FF6:  BRA     1002
+0FF8:  MOV     #0,W0
+0FFA:  MOV     #0,W1
+0FFC:  MOV     #0,W2
+0FFE:  MOV     #0,W3
+1000:  BRA     1002
+1002:  MOV     #1A,W8
+1004:  REPEAT  #4
+1006:  MOV     [--W15],[W8--]
+1008:  MOV     [--W15],W8
+100A:  RETURN  
+....................  
+.................... #list 
+....................  
+.................... #device ICSP = 1 
+.................... //#device icd = true 
+.................... //For pin 14 & pin 15 
+.................... //#device ICD = 3 
+.................... #FUSES FRC_PLL 
+.................... #use delay(clock = 32MHZ,internal= 8MHZ) 
+*
+041C:  CP0     W0
+041E:  BTSC.B  42.1
+0420:  BRA     42A
+0422:  REPEAT  #3E7B
+0424:  NOP     
+0426:  DEC     W0,W0
+0428:  BRA     NZ,422
+042A:  RETURN  
+.................... #USE RS232(UART2,BAUD = 115200, PARITY = N, BITS = 8, STOP = 1, TIMEOUT = 500) 
+*
+02B8:  MOV     W5,[W15++]
+02BA:  MOV     #4B00,W5
+02BC:  REPEAT  #19E
+02BE:  NOP     
+02C0:  DEC     W5,W5
+02C2:  BRA     NZ,2CA
+02C4:  CLR     800
+02C6:  MOV     #0,W0
+02C8:  BRA     2D6
+02CA:  BTSS.B  232.0
+02CC:  BRA     2BC
+02CE:  PUSH    232
+02D0:  POP     800
+02D2:  MOV     236,W0
+02D4:  BCLR.B  232.1
+02D6:  MOV     [--W15],W5
+02D8:  RETURN  
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES CKSFSM                   //Clock Switching is enabled, fail Safe clock monitor is enabled 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES BORV_LOW                 //Brown-out Reset set to lowest voltage 
+.................... #use fast_io(B) 
+....................  
+....................  
+....................  
+.................... #define LCD_ENABLE_PIN PIN_A7  
+.................... #define LCD_RS_PIN     PIN_B8 
+.................... #define LCD_RW_PIN     PIN_B9 
+.................... #define LCD_DATA4      PIN_B12  
+.................... #define LCD_DATA5      PIN_B13 
+.................... #define LCD_DATA6      PIN_B14 
+.................... #define LCD_DATA7      PIN_B15 
+....................  
+.................... #include <lcd.c> 
+.................... /////////////////////////////////////////////////////////////////////////////// 
+.................... ////                             LCD.C                                     //// 
+.................... ////                 Driver for common LCD modules                         //// 
+.................... ////                                                                       //// 
+.................... ////  lcd_init()   Must be called before any other function.               //// 
+.................... ////                                                                       //// 
+.................... ////  lcd_putc(c)  Will display c on the next position of the LCD.         //// 
+.................... ////                 \a  Set cursor position to upper left                 //// 
+.................... ////                 \f  Clear display, set cursor to upper left           //// 
+.................... ////                 \n  Go to start of second line                        //// 
+.................... ////                 \b  Move back one position                            //// 
+.................... ////              If LCD_EXTENDED_NEWLINE is defined, the \n character     //// 
+.................... ////              will erase all remanining characters on the current      //// 
+.................... ////              line, and move the cursor to the beginning of the next   //// 
+.................... ////              line.                                                    //// 
+.................... ////              If LCD_EXTENDED_NEWLINE is defined, the \r character     //// 
+.................... ////              will move the cursor to the start of the current         //// 
+.................... ////              line.                                                    //// 
+.................... ////                                                                       //// 
+.................... ////  lcd_gotoxy(x,y) Set write position on LCD (upper left is 1,1)        //// 
+.................... ////                                                                       //// 
+.................... ////  lcd_getc(x,y)   Returns character at position x,y on LCD             //// 
+.................... ////                                                                       //// 
+.................... ////  lcd_cursor_on(int1 on)   Turn the cursor on (on=TRUE) or off         //// 
+.................... ////              (on=FALSE).                                              //// 
+.................... ////                                                                       //// 
+.................... ////  lcd_set_cgram_char(w, *p)   Write a custom character to the CGRAM.   //// 
+.................... ////                                                                       //// 
+.................... ////                                                                       //// 
+.................... ////  CONFIGURATION                                                        //// 
+.................... ////  The LCD can be configured in one of two ways: a.) port access or     //// 
+.................... ////  b.) pin access.  Port access requires the entire 7 bit interface     //// 
+.................... ////  connected to one GPIO port, and the data bits (D4:D7 of the LCD)     //// 
+.................... ////  connected to sequential pins on the GPIO.  Pin access                //// 
+.................... ////  has no requirements, all 7 bits of the control interface can         //// 
+.................... ////  can be connected to any GPIO using several ports.                    //// 
+.................... ////                                                                       //// 
+.................... ////  To use port access, #define LCD_DATA_PORT to the SFR location of     //// 
+.................... ////  of the GPIO port that holds the interface, -AND- edit LCD_PIN_MAP    //// 
+.................... ////  of this file to configure the pin order.  If you are using a         //// 
+.................... ////  baseline PIC (PCB), then LCD_OUTPUT_MAP and LCD_INPUT_MAP also must  //// 
+.................... ////  be defined.                                                          //// 
+.................... ////                                                                       //// 
+.................... ////  Example of port access:                                              //// 
+.................... ////     #define LCD_DATA_PORT getenv("SFR:PORTD")                         //// 
+.................... ////                                                                       //// 
+.................... ////  To use pin access, the following pins must be defined:               //// 
+.................... ////     LCD_ENABLE_PIN                                                    //// 
+.................... ////     LCD_RS_PIN                                                        //// 
+.................... ////     LCD_RW_PIN                                                        //// 
+.................... ////     LCD_DATA4                                                         //// 
+.................... ////     LCD_DATA5                                                         //// 
+.................... ////     LCD_DATA6                                                         //// 
+.................... ////     LCD_DATA7                                                         //// 
+.................... ////                                                                       //// 
+.................... ////  Example of pin access:                                               //// 
+.................... ////     #define LCD_ENABLE_PIN  PIN_E0                                    //// 
+.................... ////     #define LCD_RS_PIN      PIN_E1                                    //// 
+.................... ////     #define LCD_RW_PIN      PIN_E2                                    //// 
+.................... ////     #define LCD_DATA4       PIN_D4                                    //// 
+.................... ////     #define LCD_DATA5       PIN_D5                                    //// 
+.................... ////     #define LCD_DATA6       PIN_D6                                    //// 
+.................... ////     #define LCD_DATA7       PIN_D7                                    //// 
+.................... ////                                                                       //// 
+.................... /////////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996,2010 Custom Computer Services           //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... #ifndef __LCD_C__ 
+.................... #define __LCD_C__ 
+....................  
+.................... // define the pinout. 
+.................... // only required if port access is being used. 
+.................... typedef struct   
+.................... {                            // This structure is overlayed 
+....................    int1 enable;           // on to an I/O port to gain 
+....................    int1 rs;               // access to the LCD pins. 
+....................    int1 rw;               // The bits are allocated from 
+....................    int1 unused;           // low order up.  ENABLE will 
+....................    unsigned int     data : 4;         // be LSB pin of that port. 
+....................   #if defined(__PCD__)       // The port used will be LCD_DATA_PORT. 
+....................    unsigned int    reserved: 8; 
+....................   #endif 
+.................... } LCD_PIN_MAP; 
+....................  
+.................... // this is to improve compatability with previous LCD drivers that accepted 
+.................... // a define labeled 'use_portb_lcd' that configured the LCD onto port B. 
+.................... #if ((defined(use_portb_lcd)) && (use_portb_lcd==TRUE)) 
+....................  #define LCD_DATA_PORT getenv("SFR:PORTB") 
+.................... #endif 
+....................  
+.................... #if defined(__PCB__) 
+....................    // these definitions only need to be modified for baseline PICs. 
+....................    // all other PICs use LCD_PIN_MAP or individual LCD_xxx pin definitions. 
+.................... /*                                    EN, RS,   RW,   UNUSED,  DATA  */ 
+....................  const LCD_PIN_MAP LCD_OUTPUT_MAP =  {0,  0,    0,    0,       0}; 
+....................  const LCD_PIN_MAP LCD_INPUT_MAP =   {0,  0,    0,    0,       0xF}; 
+.................... #endif 
+....................  
+.................... ////////////////////// END CONFIGURATION /////////////////////////////////// 
+....................  
+.................... #ifndef LCD_ENABLE_PIN 
+....................    #define lcd_output_enable(x) lcdlat.enable=x 
+....................    #define lcd_enable_tris()   lcdtris.enable=0 
+.................... #else 
+....................    #define lcd_output_enable(x) output_bit(LCD_ENABLE_PIN, x) 
+....................    #define lcd_enable_tris()  output_drive(LCD_ENABLE_PIN) 
+.................... #endif 
+....................  
+.................... #ifndef LCD_RS_PIN 
+....................    #define lcd_output_rs(x) lcdlat.rs=x 
+....................    #define lcd_rs_tris()   lcdtris.rs=0 
+.................... #else 
+....................    #define lcd_output_rs(x) output_bit(LCD_RS_PIN, x) 
+....................    #define lcd_rs_tris()  output_drive(LCD_RS_PIN) 
+.................... #endif 
+....................  
+.................... #ifndef LCD_RW_PIN 
+....................    #define lcd_output_rw(x) lcdlat.rw=x 
+....................    #define lcd_rw_tris()   lcdtris.rw=0 
+.................... #else 
+....................    #define lcd_output_rw(x) output_bit(LCD_RW_PIN, x) 
+....................    #define lcd_rw_tris()  output_drive(LCD_RW_PIN) 
+.................... #endif 
+....................  
+.................... // original version of this library incorrectly labeled LCD_DATA0 as LCD_DATA4, 
+.................... // LCD_DATA1 as LCD_DATA5, and so on.  this block of code makes the driver 
+.................... // compatible with any code written for the original library 
+.................... #if (defined(LCD_DATA0) && defined(LCD_DATA1) && defined(LCD_DATA2) && defined(LCD_DATA3) && !defined(LCD_DATA4) && !defined(LCD_DATA5) && !defined(LCD_DATA6) && !defined(LCD_DATA7)) 
+....................    #define  LCD_DATA4    LCD_DATA0 
+....................    #define  LCD_DATA5    LCD_DATA1 
+....................    #define  LCD_DATA6    LCD_DATA2 
+....................    #define  LCD_DATA7    LCD_DATA3 
+.................... #endif 
+....................  
+.................... #ifndef LCD_DATA4 
+.................... #ifndef LCD_DATA_PORT 
+....................    #if defined(__PCB__) 
+....................       #define LCD_DATA_PORT      0x06     //portb 
+....................       #define set_tris_lcd(x)   set_tris_b(x) 
+....................    #else 
+....................      #if defined(PIN_D0) 
+....................       #define LCD_DATA_PORT      getenv("SFR:PORTD")     //portd 
+....................      #else 
+....................       #define LCD_DATA_PORT      getenv("SFR:PORTB")     //portb 
+....................      #endif 
+....................    #endif    
+.................... #endif 
+....................  
+.................... #if defined(__PCB__) 
+....................    LCD_PIN_MAP lcd, lcdlat; 
+....................    #byte lcd = LCD_DATA_PORT 
+....................    #byte lcdlat = LCD_DATA_PORT 
+.................... #elif defined(__PCM__) 
+....................    LCD_PIN_MAP lcd, lcdlat, lcdtris; 
+....................    #byte lcd = LCD_DATA_PORT 
+....................    #byte lcdlat = LCD_DATA_PORT 
+....................    #byte lcdtris = LCD_DATA_PORT+0x80 
+.................... #elif defined(__PCH__) 
+....................    LCD_PIN_MAP lcd, lcdlat, lcdtris; 
+....................    #byte lcd = LCD_DATA_PORT 
+....................    #byte lcdlat = LCD_DATA_PORT+9 
+....................    #byte lcdtris = LCD_DATA_PORT+0x12 
+.................... #elif defined(__PCD__) 
+....................    LCD_PIN_MAP lcd, lcdlat, lcdtris; 
+....................    #word lcd = LCD_DATA_PORT 
+....................    #word lcdlat = LCD_DATA_PORT+2 
+....................    #word lcdtris = LCD_DATA_PORT-0x02 
+.................... #endif 
+.................... #endif   //LCD_DATA4 not defined 
+....................  
+.................... #ifndef LCD_TYPE 
+....................    #define LCD_TYPE 2           // 0=5x7, 1=5x10, 2=2 lines 
+.................... #endif 
+....................  
+.................... #ifndef LCD_LINE_TWO 
+....................    #define LCD_LINE_TWO 0x40    // LCD RAM address for the second line 
+.................... #endif 
+....................  
+.................... #ifndef LCD_LINE_LENGTH 
+....................    #define LCD_LINE_LENGTH 20 
+.................... #endif 
+....................  
+.................... unsigned int8 lcd_read_nibble(void); 
+....................  
+.................... unsigned int8 lcd_read_byte(void) 
+*
+049C:  MOV     W5,[W15++]
+.................... { 
+....................    unsigned int8 low,high; 
+....................  
+....................  #if defined(__PCB__) 
+....................    set_tris_lcd(LCD_INPUT_MAP); 
+....................  #else 
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7)) 
+....................    output_float(LCD_DATA4); 
+049E:  BSET.B  2C9.4
+....................    output_float(LCD_DATA5); 
+04A0:  BSET.B  2C9.5
+....................    output_float(LCD_DATA6); 
+04A2:  BSET.B  2C9.6
+....................    output_float(LCD_DATA7); 
+04A4:  BSET.B  2C9.7
+....................   #else 
+....................    lcdtris.data = 0xF; 
+....................   #endif 
+....................  #endif 
+....................          
+....................    lcd_output_rw(1); 
+04A6:  BSET.B  2CD.1
+....................    delay_cycles(1); 
+04A8:  NOP     
+....................    lcd_output_enable(1); 
+04AA:  BSET.B  2C4.7
+04AC:  BCLR.B  2C0.7
+....................    delay_cycles(1); 
+04AE:  NOP     
+....................    high = lcd_read_nibble(); 
+04B0:  CALL    464
+04B4:  MOV.B   W0L,837
+....................        
+....................    lcd_output_enable(0); 
+04B6:  BCLR.B  2C4.7
+04B8:  BCLR.B  2C0.7
+....................    delay_cycles(1); 
+04BA:  NOP     
+....................    lcd_output_enable(1); 
+04BC:  BSET.B  2C4.7
+04BE:  BCLR.B  2C0.7
+....................    delay_us(1); 
+04C0:  REPEAT  #E
+04C2:  NOP     
+....................    low = lcd_read_nibble(); 
+04C4:  CALL    464
+04C8:  MOV.B   W0L,836
+....................        
+....................    lcd_output_enable(0); 
+04CA:  BCLR.B  2C4.7
+04CC:  BCLR.B  2C0.7
+....................  
+....................  #if defined(__PCB__) 
+....................    set_tris_lcd(LCD_OUTPUT_MAP); 
+....................  #else 
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7)) 
+....................    output_drive(LCD_DATA4); 
+04CE:  BCLR.B  2C9.4
+....................    output_drive(LCD_DATA5); 
+04D0:  BCLR.B  2C9.5
+....................    output_drive(LCD_DATA6); 
+04D2:  BCLR.B  2C9.6
+....................    output_drive(LCD_DATA7); 
+04D4:  BCLR.B  2C9.7
+....................   #else 
+....................    lcdtris.data = 0x0; 
+....................   #endif 
+....................  #endif 
+....................  
+....................    return( (high<<4) | low); 
+04D6:  MOV     836,W5
+04D8:  LSR     W5,#8,W5
+04DA:  SL      W5,#4,W5
+04DC:  MOV.B   836,W0L
+04DE:  CLR.B   1
+04E0:  IOR      W5,  W0,W0
+04E2:  MOV     [--W15],W5
+04E4:  RETURN  
+.................... } 
+....................  
+.................... unsigned int8 lcd_read_nibble(void) 
+.................... { 
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7)) 
+*
+0464:  MOV     W5,[W15++]
+0466:  CLR.B   838
+....................    unsigned int8 n = 0x00; 
+....................  
+....................    /* Read the data port */ 
+....................    n |= input(LCD_DATA4); 
+0468:  CLR     W0
+046A:  BTSC.B  2CB.4
+046C:  INC     W0,W0
+046E:  IOR.B   838
+....................    n |= input(LCD_DATA5) << 1; 
+0470:  CLR     W0
+0472:  BTSC.B  2CB.5
+0474:  INC     W0,W0
+0476:  CLR.B   1
+0478:  SL      W0,#1,W0
+047A:  IOR.B   838
+....................    n |= input(LCD_DATA6) << 2; 
+047C:  CLR     W0
+047E:  BTSC.B  2CB.6
+0480:  INC     W0,W0
+0482:  CLR.B   1
+0484:  SL      W0,#2,W0
+0486:  IOR.B   838
+....................    n |= input(LCD_DATA7) << 3; 
+0488:  CLR     W0
+048A:  BTSC.B  2CB.7
+048C:  INC     W0,W0
+048E:  CLR.B   1
+0490:  SL      W0,#3,W0
+0492:  IOR.B   838
+....................     
+....................    return(n); 
+0494:  MOV.B   838,W0L
+0496:  MOV.B   W0L,0
+....................   #else 
+0498:  MOV     [--W15],W5
+049A:  RETURN  
+....................    return(lcd.data); 
+....................   #endif 
+.................... } 
+....................  
+.................... void lcd_send_nibble(unsigned int8 n) 
+.................... { 
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7)) 
+....................    /* Write to the data port */ 
+....................    output_bit(LCD_DATA4, bit_test(n, 0)); 
+*
+042C:  BTSC.B  83A.0
+042E:  BRA     434
+0430:  BCLR.B  2CD.4
+0432:  BRA     436
+0434:  BSET.B  2CD.4
+....................    output_bit(LCD_DATA5, bit_test(n, 1)); 
+0436:  BTSC.B  83A.1
+0438:  BRA     43E
+043A:  BCLR.B  2CD.5
+043C:  BRA     440
+043E:  BSET.B  2CD.5
+....................    output_bit(LCD_DATA6, bit_test(n, 2)); 
+0440:  BTSC.B  83A.2
+0442:  BRA     448
+0444:  BCLR.B  2CD.6
+0446:  BRA     44A
+0448:  BSET.B  2CD.6
+....................    output_bit(LCD_DATA7, bit_test(n, 3)); 
+044A:  BTSC.B  83A.3
+044C:  BRA     452
+044E:  BCLR.B  2CD.7
+0450:  BRA     454
+0452:  BSET.B  2CD.7
+....................   #else       
+....................    lcdlat.data = n; 
+....................   #endif 
+....................        
+....................    delay_cycles(1); 
+0454:  NOP     
+....................    lcd_output_enable(1); 
+0456:  BSET.B  2C4.7
+0458:  BCLR.B  2C0.7
+....................    delay_us(2); 
+045A:  REPEAT  #1E
+045C:  NOP     
+....................    lcd_output_enable(0); 
+045E:  BCLR.B  2C4.7
+0460:  BCLR.B  2C0.7
+0462:  RETURN  
+.................... } 
+....................  
+.................... void lcd_send_byte(unsigned int8 address, unsigned int8 n) 
+.................... { 
+....................   #if defined(__PCB__) 
+*
+04E6:  MOV     W5,[W15++]
+....................    set_tris_lcd(LCD_OUTPUT_MAP); 
+....................   #else 
+....................    lcd_enable_tris(); 
+04E8:  BCLR.B  2C0.7
+....................    lcd_rs_tris(); 
+04EA:  BCLR.B  2C9.0
+....................    lcd_rw_tris(); 
+04EC:  BCLR.B  2C9.1
+....................   #endif 
+....................  
+....................    lcd_output_rs(0); 
+04EE:  BCLR.B  2CD.0
+....................    while ( bit_test(lcd_read_byte(),7) ) ; 
+04F0:  CALL    49C
+04F4:  MOV.B   W0L,W5L
+04F6:  BTSC    W5.7
+04F8:  BRA     4F0
+....................    lcd_output_rs(address); 
+04FA:  CP0.B   832
+04FC:  BRA     NZ,502
+04FE:  BCLR.B  2CD.0
+0500:  BRA     504
+0502:  BSET.B  2CD.0
+....................    delay_cycles(1); 
+0504:  NOP     
+....................    lcd_output_rw(0); 
+0506:  BCLR.B  2CD.1
+....................    delay_cycles(1); 
+0508:  NOP     
+....................    lcd_output_enable(0); 
+050A:  BCLR.B  2C4.7
+050C:  BCLR.B  2C0.7
+....................    lcd_send_nibble(n >> 4); 
+050E:  MOV     832,W5
+0510:  LSR     W5,#8,W5
+0512:  LSR     W5,#4,W5
+0514:  PUSH    83A
+0516:  MOV.B   W5L,[W15-#2]
+0518:  POP     83A
+051A:  CALL    42C
+....................    lcd_send_nibble(n & 0xf); 
+051E:  MOV.B   833,W0L
+0520:  CLR.B   1
+0522:  AND     W0,#F,W5
+0524:  PUSH    83A
+0526:  MOV.B   W5L,[W15-#2]
+0528:  POP     83A
+052A:  CALL    42C
+052E:  MOV     [--W15],W5
+0530:  RETURN  
+.................... } 
+....................  
+.................... #if defined(LCD_EXTENDED_NEWLINE) 
+.................... unsigned int8 g_LcdX, g_LcdY; 
+.................... #endif 
+....................  
+.................... void lcd_init(void)  
+0532:  MOV     W5,[W15++]
+.................... { 
+....................    unsigned int8 i; 
+....................    unsigned int8 LCD_INIT_STRING[4] = {0x20 | (LCD_TYPE << 2), 0xc, 1, 6}; 
+0534:  MOV     #C28,W4
+0536:  MOV     W4,828
+0538:  MOV     #601,W4
+053A:  MOV     W4,82A
+....................                              // These bytes need to be sent to the LCD 
+....................                              // to start it up. 
+....................     
+....................  
+....................    lcd_output_enable(0); 
+053C:  BCLR.B  2C4.7
+053E:  BCLR.B  2C0.7
+....................    lcd_output_rs(0); 
+0540:  BCLR.B  2CD.0
+....................    lcd_output_rw(0); 
+0542:  BCLR.B  2CD.1
+....................  
+....................  #if defined(__PCB__) 
+....................    set_tris_lcd(LCD_OUTPUT_MAP); 
+....................  #else 
+....................   #if (defined(LCD_DATA4) && defined(LCD_DATA5) && defined(LCD_DATA6) && defined(LCD_DATA7)) 
+....................    output_drive(LCD_DATA4); 
+0544:  BCLR.B  2C9.4
+....................    output_drive(LCD_DATA5); 
+0546:  BCLR.B  2C9.5
+....................    output_drive(LCD_DATA6); 
+0548:  BCLR.B  2C9.6
+....................    output_drive(LCD_DATA7); 
+054A:  BCLR.B  2C9.7
+....................   #else 
+....................    lcdtris.data = 0x0; 
+....................   #endif 
+....................    lcd_enable_tris(); 
+054C:  BCLR.B  2C0.7
+....................    lcd_rs_tris(); 
+054E:  BCLR.B  2C9.0
+....................    lcd_rw_tris(); 
+0550:  BCLR.B  2C9.1
+....................  #endif 
+....................      
+....................    delay_ms(15); 
+0552:  MOV     #F,W0
+0554:  CALL    41C
+....................    for(i=1;i<=3;++i) 
+0558:  MOV.B   #1,W0L
+055A:  MOV.B   W0L,826
+055C:  MOV     826,W4
+055E:  CP.B    W4L,#3
+0560:  BRA     GTU,574
+....................    { 
+....................        lcd_send_nibble(3); 
+0562:  MOV.B   #3,W0L
+0564:  MOV.B   W0L,83A
+0566:  CALL    42C
+....................        delay_ms(5); 
+056A:  MOV     #5,W0
+056C:  CALL    41C
+0570:  INC.B   0826
+0572:  BRA     55C
+....................    } 
+....................     
+....................    lcd_send_nibble(2); 
+0574:  MOV.B   #2,W0L
+0576:  MOV.B   W0L,83A
+0578:  CALL    42C
+....................    delay_ms(5); 
+057C:  MOV     #5,W0
+057E:  CALL    41C
+....................    for(i=0;i<=3;++i) 
+0582:  CLR.B   826
+0584:  MOV     826,W4
+0586:  CP.B    W4L,#3
+0588:  BRA     GTU,5A4
+....................       lcd_send_byte(0,LCD_INIT_STRING[i]); 
+058A:  MOV     826,W4
+058C:  CLR.B   9
+058E:  MOV     #828,W3
+0590:  ADD     W4,W3,W0
+0592:  MOV.B   [W0],W5L
+0594:  CLR.B   832
+0596:  PUSH    832
+0598:  MOV.B   W5L,[W15-#1]
+059A:  POP     832
+059C:  CALL    4E6
+....................  
+....................   #if defined(LCD_EXTENDED_NEWLINE) 
+05A0:  INC.B   0826
+05A2:  BRA     584
+05A4:  MOV     [--W15],W5
+05A6:  RETURN  
+....................    g_LcdX = 0; 
+....................    g_LcdY = 0; 
+....................   #endif 
+.................... } 
+....................  
+.................... void lcd_gotoxy(unsigned int8 x, unsigned int8 y) 
+05A8:  MOV     W5,[W15++]
+.................... { 
+....................    unsigned int8 address; 
+....................     
+....................    if(y!=1) 
+05AA:  MOV     82A,W4
+05AC:  LSR     W4,#8,W4
+05AE:  CP.B    W4L,#1
+05B0:  BRA     Z,5B8
+....................       address=LCD_LINE_TWO; 
+05B2:  MOV.B   #40,W0L
+05B4:  MOV.B   W0L,82C
+05B6:  BRA     5BA
+....................    else 
+....................       address=0; 
+05B8:  CLR.B   82C
+....................       
+....................    address+=x-1; 
+05BA:  MOV     82A,W4
+05BC:  CLR.B   9
+05BE:  SUB     W4,#1,W0
+05C0:  ADD.B   82C
+....................    lcd_send_byte(0,0x80|address); 
+05C2:  MOV.B   82C,W0L
+05C4:  CLR.B   1
+05C6:  MOV.B   W0L,W5L
+05C8:  IOR     #80,W5
+05CA:  CLR.B   832
+05CC:  PUSH    832
+05CE:  MOV.B   W5L,[W15-#1]
+05D0:  POP     832
+05D2:  CALL    4E6
+....................  
+....................   #if defined(LCD_EXTENDED_NEWLINE) 
+05D6:  MOV     [--W15],W5
+05D8:  RETURN  
+....................    g_LcdX = x - 1; 
+....................    g_LcdY = y - 1; 
+....................   #endif 
+.................... } 
+....................  
+.................... void lcd_putc(char c) 
+.................... { 
+....................    switch (c) 
+05DA:  MOV.B   828,W0L
+05DC:  SE      W0,W0
+05DE:  XOR     #7,W0
+05E0:  BRA     Z,5F0
+05E2:  XOR     #B,W0
+05E4:  BRA     Z,5FE
+05E6:  XOR     #6,W0
+05E8:  BRA     Z,612
+05EA:  XOR     #2,W0
+05EC:  BRA     Z,620
+05EE:  BRA     62C
+....................    { 
+....................       case '\a'   :  lcd_gotoxy(1,1);     break; 
+05F0:  MOV.B   #1,W0L
+05F2:  MOV.B   W0L,82A
+05F4:  MOV.B   #1,W0L
+05F6:  MOV.B   W0L,82B
+05F8:  CALL    5A8
+05FC:  BRA     63A
+....................  
+....................       case '\f'   :  lcd_send_byte(0,1); 
+05FE:  CLR.B   832
+0600:  MOV.B   #1,W0L
+0602:  MOV.B   W0L,833
+0604:  CALL    4E6
+....................                      delay_ms(2); 
+0608:  REPEAT  #3CFE
+060A:  NOP     
+060C:  REPEAT  #3FFF
+060E:  NOP     
+....................                     #if defined(LCD_EXTENDED_NEWLINE) 
+....................                      g_LcdX = 0; 
+....................                      g_LcdY = 0; 
+....................                     #endif 
+....................                      break; 
+0610:  BRA     63A
+....................  
+....................      #if defined(LCD_EXTENDED_NEWLINE) 
+....................       case '\r'   :  lcd_gotoxy(1, g_LcdY+1);   break; 
+....................       case '\n'   : 
+....................          while (g_LcdX++ < LCD_LINE_LENGTH) 
+....................          { 
+....................             lcd_send_byte(1, ' '); 
+....................          } 
+....................          lcd_gotoxy(1, g_LcdY+2); 
+....................          break; 
+....................      #else 
+....................       case '\n'   : lcd_gotoxy(1,2);        break; 
+0612:  MOV.B   #1,W0L
+0614:  MOV.B   W0L,82A
+0616:  MOV.B   #2,W0L
+0618:  MOV.B   W0L,82B
+061A:  CALL    5A8
+061E:  BRA     63A
+....................      #endif 
+....................       
+....................       case '\b'   : lcd_send_byte(0,0x10);  break; 
+0620:  CLR.B   832
+0622:  MOV.B   #10,W0L
+0624:  MOV.B   W0L,833
+0626:  CALL    4E6
+062A:  BRA     63A
+....................       
+....................      #if defined(LCD_EXTENDED_NEWLINE) 
+....................       default     :  
+....................          if (g_LcdX < LCD_LINE_LENGTH) 
+....................          { 
+....................             lcd_send_byte(1, c); 
+....................             g_LcdX++; 
+....................          } 
+....................          break; 
+....................      #else 
+....................       default     : lcd_send_byte(1,c);     break; 
+062C:  MOV.B   #1,W0L
+062E:  MOV.B   W0L,832
+0630:  MOV.B   828,W0L
+0632:  MOV.B   W0L,833
+0634:  CALL    4E6
+0638:  BRA     63A
+....................      #endif 
+....................    } 
+063A:  RETURN  
+.................... } 
+....................   
+.................... char lcd_getc(unsigned int8 x, unsigned int8 y) 
+.................... { 
+....................    char value; 
+....................  
+....................    lcd_gotoxy(x,y); 
+....................    while ( bit_test(lcd_read_byte(),7) ); // wait until busy flag is low 
+....................    lcd_output_rs(1); 
+....................    value = lcd_read_byte(); 
+....................    lcd_output_rs(0); 
+....................     
+....................    return(value); 
+.................... } 
+....................  
+.................... // write a custom character to the ram 
+.................... // which is 0-7 and specifies which character array we are modifying. 
+.................... // ptr points to an array of 8 bytes, where each byte is the next row of 
+.................... //    pixels.  only bits 0-4 are used.  the last row is the cursor row, and 
+.................... //    usually you will want to leave this byte 0x00. 
+.................... void lcd_set_cgram_char(unsigned int8 which, unsigned int8 *ptr) 
+.................... { 
+....................    unsigned int i; 
+....................  
+....................    which <<= 3; 
+....................    which &= 0x38; 
+....................  
+....................    lcd_send_byte(0, 0x40 | which);  //set cgram address 
+....................  
+....................    for(i=0; i<8; i++) 
+....................    { 
+....................       lcd_send_byte(1, *ptr++); 
+....................    } 
+....................    
+....................    #if defined(LCD_EXTENDED_NEWLINE) 
+....................     lcd_gotoxy(g_LcdX+1, g_LcdY+1);  //set ddram address 
+....................    #endif 
+.................... } 
+....................  
+.................... void lcd_cursor_on(int1 on) 
+.................... { 
+....................    if (on) 
+....................    { 
+....................       lcd_send_byte(0,0x0F);           //turn LCD cursor ON 
+....................    } 
+....................    else 
+....................    { 
+....................       lcd_send_byte(0,0x0C);           //turn LCD cursor OFF 
+....................    } 
+.................... } 
+....................  
+.................... #endif 
+....................  
+.................... #include "keypad.c" 
+.................... #word kbd = getenv("SFR:PORTB") 
+....................  
+.................... char const KEYS[4][4] = {{'1','2','3','A'}, 
+....................                          {'4','5','6','B'}, 
+....................                          {'7','8','9','C'}, 
+....................                          {'*','0','#','D'}}; 
+....................                          
+.................... void kbd_init(){ 
+063C:  MOV     W5,[W15++]
+....................    set_tris_b(0x0F00 | (0x00FF & get_tris_b())); 
+063E:  MOV     2C8,W0
+0640:  AND     #FF,W0
+0642:  MOV     W0,W4
+0644:  MOV     #F00,W0
+0646:  IOR      W0,  W4,W5
+0648:  MOV     W5,2C8
+....................    set_pullup(true,PIN_B8); 
+064A:  BSET.B  70.6
+....................    set_pullup(true,PIN_B9); 
+064C:  BSET.B  70.5
+....................    set_pullup(true,PIN_B10); 
+064E:  BSET.B  70.0
+....................    set_pullup(true,PIN_B11); 
+0650:  BSET.B  6F.7
+....................    kbd = (0x0000 | (0x00FF & kbd)); 
+0652:  MOV     2CA,W0
+0654:  AND     #FF,W0
+0656:  MOV     W0,2CA
+0658:  MOV     [--W15],W5
+065A:  RETURN  
+.................... } 
+....................  
+.................... char kbd_getc(){ 
+*
+0302:  MOV     W5,[W15++]
+0304:  BCLR.B  864.0
+0306:  BCLR.B  864.1
+0308:  CLR.B   866
+030A:  CLR.B   867
+....................    int1 kbd_down = 0; 
+....................    int1 idd = 0; 
+....................    char last_key; 
+....................    unsigned int8 col = 0; 
+....................    unsigned int8 kchar = '\0'; 
+....................    unsigned int8 row; 
+....................     
+....................    set_tris_b(0x0F00 | (0x00FF & get_tris_b())); 
+030C:  MOV     2C8,W0
+030E:  AND     #FF,W0
+0310:  MOV     W0,W4
+0312:  MOV     #F00,W0
+0314:  IOR      W0,  W4,W5
+0316:  MOV     W5,2C8
+....................     
+....................    while(idd == 0){ 
+0318:  BTSC.B  864.1
+031A:  BRA     3EE
+....................       delay_us(100); //this delay adds de-bounce 
+031C:  REPEAT  #63E
+031E:  NOP     
+....................       if(col == 3){ 
+0320:  MOV     866,W4
+0322:  CP.B    W4L,#3
+0324:  BRA     NZ,334
+....................          kbd = (0xEF00 | (0x00FF & kbd));} //set D1, 1st col, low   
+0326:  MOV     2CA,W0
+0328:  AND     #FF,W0
+032A:  MOV     W0,W4
+032C:  MOV     #EF00,W0
+032E:  IOR      W0,  W4,W0
+0330:  MOV     W0,2CA
+0332:  BRA     36C
+....................       else if(col == 2){ 
+0334:  MOV     866,W4
+0336:  CP.B    W4L,#2
+0338:  BRA     NZ,348
+....................          kbd = (0xDF00 | (0x00FF & kbd));} //set D2, 2nd col, low 
+033A:  MOV     2CA,W0
+033C:  AND     #FF,W0
+033E:  MOV     W0,W4
+0340:  MOV     #DF00,W0
+0342:  IOR      W0,  W4,W0
+0344:  MOV     W0,2CA
+0346:  BRA     36C
+....................       else if(col == 1){ 
+0348:  MOV     866,W4
+034A:  CP.B    W4L,#1
+034C:  BRA     NZ,35C
+....................          kbd = (0xBF00 | (0x00FF & kbd));} //set D3, 3rd col, low 
+034E:  MOV     2CA,W0
+0350:  AND     #FF,W0
+0352:  MOV     W0,W4
+0354:  MOV     #BF00,W0
+0356:  IOR      W0,  W4,W0
+0358:  MOV     W0,2CA
+035A:  BRA     36C
+....................       else if(col == 0){ 
+035C:  CP0.B   866
+035E:  BRA     NZ,36C
+....................          kbd = (0x7F00 | (0x00FF & kbd));} //set D4, 4th col, low 
+0360:  MOV     2CA,W0
+0362:  AND     #FF,W0
+0364:  MOV     W0,W4
+0366:  MOV     #7F00,W0
+0368:  IOR      W0,  W4,W0
+036A:  MOV     W0,2CA
+....................           
+....................           
+....................       if(kbd_down){ 
+036C:  BTSS.B  864.0
+036E:  BRA     388
+....................          if((kbd & 0x0F00) == 0x0F00){ 
+0370:  MOV     #F00,W0
+0372:  AND     2CA,W0
+0374:  MOV     W0,W5
+0376:  MOV     #F00,W4
+0378:  CP      W4,W5
+037A:  BRA     NZ,386
+....................          kbd_down=FALSE; 
+037C:  BCLR.B  864.0
+....................          kchar=last_key; 
+037E:  MOV.B   865,W0L
+0380:  MOV.B   W0L,867
+....................          last_key='\0'; 
+0382:  CLR.B   865
+....................          idd=1; 
+0384:  BSET.B  864.1
+....................          } 
+....................       } 
+0386:  BRA     3EC
+....................       else 
+....................       { 
+....................          if((kbd & 0x0F00) != 0x0F00){   //if a key is pressed, one of row will be low 
+0388:  MOV     #F00,W0
+038A:  AND     2CA,W0
+038C:  MOV     W0,W5
+038E:  MOV     #F00,W4
+0390:  CP      W4,W5
+0392:  BRA     Z,3E2
+....................             if((kbd & 0x0800) == 0) row = 0; 
+0394:  MOV     #800,W0
+0396:  AND     2CA,W0
+0398:  MOV     W0,W5
+039A:  CP0     W5
+039C:  BRA     NZ,3A2
+039E:  CLR.B   868
+03A0:  BRA     3CC
+....................             else if((kbd & 0x0400) == 0) row = 1; 
+03A2:  MOV     #400,W0
+03A4:  AND     2CA,W0
+03A6:  MOV     W0,W5
+03A8:  CP0     W5
+03AA:  BRA     NZ,3B2
+03AC:  MOV.B   #1,W0L
+03AE:  MOV.B   W0L,868
+03B0:  BRA     3CC
+....................             else if((kbd & 0x0200) == 0) row = 2; 
+03B2:  MOV     2CA,W5
+03B4:  AND     #200,W5
+03B6:  CP0     W5
+03B8:  BRA     NZ,3C0
+03BA:  MOV.B   #2,W0L
+03BC:  MOV.B   W0L,868
+03BE:  BRA     3CC
+....................             else if((kbd & 0x0100) == 0) row = 3; 
+03C0:  MOV     2CA,W5
+03C2:  AND     #100,W5
+03C4:  CP0     W5
+03C6:  BRA     NZ,3CC
+03C8:  MOV.B   #3,W0L
+03CA:  MOV.B   W0L,868
+....................             last_key = KEYS[col][row]; 
+03CC:  MOV.B   866,W0L
+03CE:  CLR.B   1
+03D0:  SL      W0,#2,W5
+03D2:  MOV     868,W4
+03D4:  CLR.B   9
+03D6:  ADD     W5,W4,W0
+03D8:  CALL    200
+03DC:  MOV.B   W0L,865
+....................             kbd_down = TRUE; 
+03DE:  BSET.B  864.0
+....................          } 
+03E0:  BRA     3EC
+....................          else{ 
+....................             ++col; 
+03E2:  INC.B   0866
+....................             if(col == 4) col = 0; 
+03E4:  MOV     866,W4
+03E6:  CP.B    W4L,#4
+03E8:  BRA     NZ,3EC
+03EA:  CLR.B   866
+....................          } 
+....................       } 
+03EC:  BRA     318
+....................    } 
+....................    return(kchar); 
+03EE:  MOV.B   867,W0L
+03F0:  MOV     [--W15],W5
+03F2:  RETURN  
+.................... } 
+....................  
+....................  
+.................... #include "uart.c" 
+.................... //Keyboard pressed 
+.................... int1 serial_flag = 0; 
+.................... char uart_key; 
+....................  
+.................... #INT_RDA2 
+.................... void isr_uart(){ 
+*
+02DA:  PUSH    42
+02DC:  PUSH    36
+02DE:  PUSH    32
+02E0:  MOV     W0,[W15++]
+02E2:  MOV     #2,W0
+02E4:  REPEAT  #C
+02E6:  MOV     [W0++],[W15++]
+....................   uart_key = getc(); 
+02E8:  CALL    2B8
+02EC:  MOV.B   W0L,803
+....................   serial_flag = 1; 
+02EE:  BSET.B  802.0
+02F0:  BCLR.B  87.6
+02F2:  MOV     #1A,W0
+02F4:  REPEAT  #C
+02F6:  MOV     [--W15],[W0--]
+02F8:  MOV     [--W15],W0
+02FA:  POP     32
+02FC:  POP     36
+02FE:  POP     42
+0300:  RETFIE  
+.................... } 
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... //Key pressed 
+.................... int1 keypad_flag = 0; 
+.................... char key = 0; 
+.................... #INT_EXT0 
+.................... void isr_ext(){ 
+*
+03F4:  PUSH    42
+03F6:  PUSH    36
+03F8:  PUSH    32
+03FA:  MOV     W0,[W15++]
+03FC:  MOV     #2,W0
+03FE:  REPEAT  #C
+0400:  MOV     [W0++],[W15++]
+....................  
+....................    key = kbd_getc(); 
+0402:  CALL    302
+0406:  MOV.B   W0L,804
+....................    keypad_flag = 1; 
+0408:  BSET.B  802.1
+040A:  BCLR.B  84.0
+040C:  MOV     #1A,W0
+040E:  REPEAT  #C
+0410:  MOV     [--W15],[W0--]
+0412:  MOV     [--W15],W0
+0414:  POP     32
+0416:  POP     36
+0418:  POP     42
+041A:  RETFIE  
+.................... } 
+....................  
+.................... isr_uart(); 
+....................  
+.................... void lcd_display(char c){ 
+....................    disable_interrupts(INT_EXT0); 
+*
+065C:  BCLR.B  94.0
+....................    set_pullup(false); 
+065E:  CLR     6E
+0660:  CLR     70
+....................    lcd_putc(c); 
+0662:  MOV.B   826,W0L
+0664:  MOV.B   W0L,828
+0666:  CALL    5DA
+....................    kbd_init(); 
+066A:  CALL    63C
+....................    clear_interrupt(INT_EXT0); 
+066E:  BCLR.B  84.0
+....................    enable_interrupts(INT_EXT0); 
+0670:  BSET.B  94.0
+0672:  RETURN  
+.................... } 
+....................  
+.................... void main(){ 
+*
+100C:  MOV     #F80,W15
+100E:  MOV     #FFF,W0
+1010:  MOV     W0,20
+1012:  NOP     
+1014:  BSET.B  81.7
+1016:  CLR     744
+1018:  CLR     800
+101A:  MOV     #8000,W4
+101C:  MOV     W4,230
+101E:  MOV     #400,W4
+1020:  MOV     W4,232
+1022:  BSET.B  230.3
+1024:  MOV     #22,W4
+1026:  MOV     W4,238
+1028:  BCLR.B  802.0
+102A:  BCLR.B  802.1
+102C:  CLR.B   804
+102E:  CLR     4E0
+1030:  CLR     4E2
+1032:  CLR     806
+1034:  CLR     808
+1036:  CLR     80A
+1038:  CLR     80C
+103A:  CLR     80E
+103C:  CLR     810
+103E:  CLR     812
+1040:  CLR     814
+1042:  CLR     816
+1044:  CLR     818
+1046:  CLR     81A
+1048:  CLR     81C
+104A:  CLR     81E
+104C:  CLR.B   820
+....................     
+....................    int intkey = 0; 
+....................    double operand1 = 0,operand2 = 0; 
+....................    double result = 0; 
+....................    char sign = '\0'; 
+....................    int  errorMessage; 
+....................    int repeat; 
+....................    lcd_init(); 
+104E:  CALL    532
+....................  
+....................    //UART display 
+....................    printf("\n\rNicol Anokhin\n\r"); 
+1052:  MOV     #0,W1
+1054:  MOV     W1,W0
+1056:  CLR.B   1
+1058:  CALL    21C
+105C:  INC     W1,W1
+105E:  BTSS.B  233.0
+1060:  BRA     105E
+1062:  MOV     W0,234
+1064:  MOV     #10,W0
+1066:  CPSGT   W1,W0
+1068:  BRA     1054
+....................    printf("\n\rA:+ B:- C:* D:/\n\r"); 
+106A:  MOV     #0,W1
+106C:  MOV     W1,W0
+106E:  CLR.B   1
+1070:  CALL    23A
+1074:  INC     W1,W1
+1076:  BTSS.B  233.0
+1078:  BRA     1076
+107A:  MOV     W0,234
+107C:  MOV     #12,W0
+107E:  CPSGT   W1,W0
+1080:  BRA     106C
+....................     
+....................    //LCD display 
+....................    printf(lcd_putc,"\fNicol Anokhin\n"); 
+1082:  MOV     #0,W1
+1084:  MOV     W1,W0
+1086:  CLR.B   1
+1088:  CALL    25A
+108C:  INC     W1,W1
+108E:  MOV     W1,[W15++]
+1090:  MOV.B   W0L,828
+1092:  CALL    5DA
+1096:  MOV     [--W15],W1
+1098:  MOV     #E,W0
+109A:  CPSGT   W1,W0
+109C:  BRA     1084
+....................    printf(lcd_putc,"A:+ B:- C:* D:/"); 
+109E:  MOV     #0,W1
+10A0:  MOV     W1,W0
+10A2:  CLR.B   1
+10A4:  CALL    276
+10A8:  INC     W1,W1
+10AA:  MOV     W1,[W15++]
+10AC:  MOV.B   W0L,828
+10AE:  CALL    5DA
+10B2:  MOV     [--W15],W1
+10B4:  MOV     #E,W0
+10B6:  CPSGT   W1,W0
+10B8:  BRA     10A0
+....................    delay_ms(2500); 
+10BA:  MOV     #9C4,W0
+10BC:  CALL    41C
+....................    printf(lcd_putc,"\f"); 
+10C0:  MOV.B   #C,W0L
+10C2:  MOV.B   W0L,828
+10C4:  CALL    5DA
+....................     
+....................     
+....................    kbd_init(); 
+10C8:  CALL    63C
+....................    ext_int_edge(L_TO_H); 
+10CC:  BCLR.B  82.0
+....................    clear_interrupt(INT_EXT0); 
+10CE:  BCLR.B  84.0
+....................    enable_interrupts(INT_EXT0); 
+10D0:  BSET.B  94.0
+....................    enable_interrupts(INTR_GLOBAL);//LCD & Terminal 
+10D2:  BCLR.B  81.7
+10D4:  CLR     42
+10D6:  BSET.B  81.7
+....................     
+....................    ext_int_edge(L_TO_H); 
+10D8:  BCLR.B  82.0
+....................    enable_interrupts(INT_RDA2); 
+10DA:  BSET.B  97.6
+....................    enable_interrupts(INTR_GLOBAL);//LCD & Terminal 
+10DC:  BCLR.B  81.7
+10DE:  CLR     42
+10E0:  BSET.B  81.7
+....................     
+....................    while(TRUE){ 
+....................  
+....................       if(keypad_flag || serial_flag){ 
+10E2:  BTSC.B  802.1
+10E4:  BRA     10EA
+10E6:  BTSS.B  802.0
+10E8:  BRA     1754
+....................          if(serial_flag){ 
+10EA:  BTSS.B  802.0
+10EC:  BRA     10F4
+....................           key = uart_key; 
+10EE:  MOV.B   803,W0L
+10F0:  MOV.B   W0L,804
+....................           serial_flag = 0; 
+10F2:  BCLR.B  802.0
+....................          } 
+....................          if(keypad_flag){ 
+10F4:  BTSS.B  802.1
+10F6:  BRA     10FA
+....................           key = key; 
+....................           keypad_flag = 0; 
+10F8:  BCLR.B  802.1
+....................          } 
+....................          if(key == '*'){ 
+10FA:  MOV     804,W4
+10FC:  XOR.B   #2A,W4L
+10FE:  BRA     NZ,1422
+....................                 //Reset calculator 
+....................                if(errorMessage == 2){ 
+1100:  MOV     822,W4
+1102:  CP      W4,#2
+1104:  BRA     NZ,1146
+....................                   lcd_display('\f'); 
+1106:  MOV.B   #C,W0L
+1108:  MOV.B   W0L,826
+110A:  CALL    65C
+....................                   putc('\n'); 
+110E:  MOV.B   #A,W0L
+1110:  BTSS.B  233.0
+1112:  BRA     1110
+1114:  MOV.B   W0L,234
+1116:  CLR.B   235
+....................                   putc('\r'); 
+1118:  MOV.B   #D,W0L
+111A:  BTSS.B  233.0
+111C:  BRA     111A
+111E:  MOV.B   W0L,234
+1120:  CLR.B   235
+....................                    key = '\0'; 
+1122:  CLR.B   804
+....................                    operand1 = 0; 
+1124:  CLR     808
+1126:  CLR     80A
+1128:  CLR     80C
+112A:  CLR     80E
+....................                    operand2 = 0; 
+112C:  CLR     810
+112E:  CLR     812
+1130:  CLR     814
+1132:  CLR     816
+....................                    intkey = 0; 
+1134:  CLR     806
+....................                    sign = '\0';  
+1136:  CLR.B   820
+....................                    result = 0; 
+1138:  CLR     818
+113A:  CLR     81A
+113C:  CLR     81C
+113E:  CLR     81E
+....................                    errorMessage = 0; 
+1140:  CLR     822
+....................                    repeat = 1; 
+1142:  MOV     #1,W4
+1144:  MOV     W4,824
+....................                } 
+....................                //Change number to negative 
+....................                if(sign == '\0'&& repeat != 1 && repeat == 0){ 
+1146:  CP0.B   820
+1148:  BRA     NZ,11B4
+114A:  MOV     824,W4
+114C:  CP      W4,#1
+114E:  BRA     Z,11B4
+1150:  CP0     824
+1152:  BRA     NZ,11B4
+....................                   putc('*'); 
+1154:  MOV.B   #2A,W0L
+1156:  BTSS.B  233.0
+1158:  BRA     1156
+115A:  MOV.B   W0L,234
+115C:  CLR.B   235
+....................                   lcd_display('\f'); 
+115E:  MOV.B   #C,W0L
+1160:  MOV.B   W0L,826
+1162:  CALL    65C
+....................                   operand1 = -1*(operand1); 
+1166:  MOV     #0,W0
+1168:  MOV     #0,W1
+116A:  MOV     #0,W2
+116C:  MOV     #BFF0,W3
+116E:  MOV     808,W4
+1170:  MOV     80A,W5
+1172:  MOV     80C,W6
+1174:  MOV     80E,W7
+1176:  CALL    674
+117A:  MOV     W0,808
+117C:  MOV     W1,80A
+117E:  MOV     W2,80C
+1180:  MOV     W3,80E
+....................                   printf(lcd_display,"%f",operand1); 
+1182:  MOV     808,W0
+1184:  MOV     80A,W1
+1186:  MOV     80C,W2
+1188:  MOV     80E,W3
+118A:  MOV     #2,W9
+118C:  MOV     #8008,W10
+118E:  CALL    876
+....................                   printf("\n\r%f",operand1); 
+1192:  BTSS.B  233.0
+1194:  BRA     1192
+1196:  MOV     #A,W4
+1198:  MOV     W4,234
+119A:  BTSS.B  233.0
+119C:  BRA     119A
+119E:  MOV     #D,W4
+11A0:  MOV     W4,234
+11A2:  MOV     808,W0
+11A4:  MOV     80A,W1
+11A6:  MOV     80C,W2
+11A8:  MOV     80E,W3
+11AA:  MOV     #2,W9
+11AC:  MOV     #8008,W10
+11AE:  CALL    A18
+....................                   repeat = 0; 
+11B2:  CLR     824
+....................                } 
+....................                if(sign != '\0'){ 
+11B4:  CP0.B   820
+11B6:  BRA     Z,13E8
+....................                   putc('*'); 
+11B8:  MOV.B   #2A,W0L
+11BA:  BTSS.B  233.0
+11BC:  BRA     11BA
+11BE:  MOV.B   W0L,234
+11C0:  CLR.B   235
+....................                   //Change second number to negative 
+....................                    lcd_display('\f'); 
+11C2:  MOV.B   #C,W0L
+11C4:  MOV.B   W0L,826
+11C6:  CALL    65C
+....................                    if(sign == 'A'){ 
+11CA:  MOV     820,W4
+11CC:  XOR.B   #41,W4L
+11CE:  BRA     NZ,124C
+....................                    operand2 = -1*operand2; 
+11D0:  MOV     #0,W0
+11D2:  MOV     #0,W1
+11D4:  MOV     #0,W2
+11D6:  MOV     #BFF0,W3
+11D8:  MOV     810,W4
+11DA:  MOV     812,W5
+11DC:  MOV     814,W6
+11DE:  MOV     816,W7
+11E0:  CALL    674
+11E4:  MOV     W0,810
+11E6:  MOV     W1,812
+11E8:  MOV     W2,814
+11EA:  MOV     W3,816
+....................                    //LCD display 
+....................                    printf(lcd_display,"%f",operand1); 
+11EC:  MOV     808,W0
+11EE:  MOV     80A,W1
+11F0:  MOV     80C,W2
+11F2:  MOV     80E,W3
+11F4:  MOV     #2,W9
+11F6:  MOV     #8008,W10
+11F8:  CALL    876
+....................                    printf(lcd_display,"+"); 
+11FC:  MOV.B   #2B,W0L
+11FE:  MOV.B   W0L,826
+1200:  CALL    65C
+....................                    printf(lcd_display,"%f",operand2); 
+1204:  MOV     810,W0
+1206:  MOV     812,W1
+1208:  MOV     814,W2
+120A:  MOV     816,W3
+120C:  MOV     #2,W9
+120E:  MOV     #8008,W10
+1210:  CALL    876
+....................                    //UART display 
+....................                    printf("\n\r%f",operand1); 
+1214:  BTSS.B  233.0
+1216:  BRA     1214
+1218:  MOV     #A,W4
+121A:  MOV     W4,234
+121C:  BTSS.B  233.0
+121E:  BRA     121C
+1220:  MOV     #D,W4
+1222:  MOV     W4,234
+1224:  MOV     808,W0
+1226:  MOV     80A,W1
+1228:  MOV     80C,W2
+122A:  MOV     80E,W3
+122C:  MOV     #2,W9
+122E:  MOV     #8008,W10
+1230:  CALL    A18
+....................                    printf("+"); 
+1234:  BTSS.B  233.0
+1236:  BRA     1234
+1238:  MOV     #2B,W4
+123A:  MOV     W4,234
+....................                    printf("%f",operand2); 
+123C:  MOV     810,W0
+123E:  MOV     812,W1
+1240:  MOV     814,W2
+1242:  MOV     816,W3
+1244:  MOV     #2,W9
+1246:  MOV     #8008,W10
+1248:  CALL    A18
+....................                    } 
+....................                    if(sign == 'B'){ 
+124C:  MOV     820,W4
+124E:  XOR.B   #42,W4L
+1250:  BRA     NZ,12CE
+....................                    operand2 = -1*operand2; 
+1252:  MOV     #0,W0
+1254:  MOV     #0,W1
+1256:  MOV     #0,W2
+1258:  MOV     #BFF0,W3
+125A:  MOV     810,W4
+125C:  MOV     812,W5
+125E:  MOV     814,W6
+1260:  MOV     816,W7
+1262:  CALL    674
+1266:  MOV     W0,810
+1268:  MOV     W1,812
+126A:  MOV     W2,814
+126C:  MOV     W3,816
+....................                    //LCD display 
+....................                    printf(lcd_display,"%f",operand1); 
+126E:  MOV     808,W0
+1270:  MOV     80A,W1
+1272:  MOV     80C,W2
+1274:  MOV     80E,W3
+1276:  MOV     #2,W9
+1278:  MOV     #8008,W10
+127A:  CALL    876
+....................                    printf(lcd_display,"-"); 
+127E:  MOV.B   #2D,W0L
+1280:  MOV.B   W0L,826
+1282:  CALL    65C
+....................                    printf(lcd_display,"%f",operand2); 
+1286:  MOV     810,W0
+1288:  MOV     812,W1
+128A:  MOV     814,W2
+128C:  MOV     816,W3
+128E:  MOV     #2,W9
+1290:  MOV     #8008,W10
+1292:  CALL    876
+....................                    //UART display 
+....................                    printf("\n\r%f",operand1); 
+1296:  BTSS.B  233.0
+1298:  BRA     1296
+129A:  MOV     #A,W4
+129C:  MOV     W4,234
+129E:  BTSS.B  233.0
+12A0:  BRA     129E
+12A2:  MOV     #D,W4
+12A4:  MOV     W4,234
+12A6:  MOV     808,W0
+12A8:  MOV     80A,W1
+12AA:  MOV     80C,W2
+12AC:  MOV     80E,W3
+12AE:  MOV     #2,W9
+12B0:  MOV     #8008,W10
+12B2:  CALL    A18
+....................                    printf("-"); 
+12B6:  BTSS.B  233.0
+12B8:  BRA     12B6
+12BA:  MOV     #2D,W4
+12BC:  MOV     W4,234
+....................                    printf("%f",operand2); 
+12BE:  MOV     810,W0
+12C0:  MOV     812,W1
+12C2:  MOV     814,W2
+12C4:  MOV     816,W3
+12C6:  MOV     #2,W9
+12C8:  MOV     #8008,W10
+12CA:  CALL    A18
+....................                    } 
+....................                    if(sign == 'C'){ 
+12CE:  MOV     820,W4
+12D0:  XOR.B   #43,W4L
+12D2:  BRA     NZ,1350
+....................                    operand2 = -1*operand2; 
+12D4:  MOV     #0,W0
+12D6:  MOV     #0,W1
+12D8:  MOV     #0,W2
+12DA:  MOV     #BFF0,W3
+12DC:  MOV     810,W4
+12DE:  MOV     812,W5
+12E0:  MOV     814,W6
+12E2:  MOV     816,W7
+12E4:  CALL    674
+12E8:  MOV     W0,810
+12EA:  MOV     W1,812
+12EC:  MOV     W2,814
+12EE:  MOV     W3,816
+....................                    // LCD Display 
+....................                    printf(lcd_display,"%f",operand1); 
+12F0:  MOV     808,W0
+12F2:  MOV     80A,W1
+12F4:  MOV     80C,W2
+12F6:  MOV     80E,W3
+12F8:  MOV     #2,W9
+12FA:  MOV     #8008,W10
+12FC:  CALL    876
+....................                    printf(lcd_display,"*"); 
+1300:  MOV.B   #2A,W0L
+1302:  MOV.B   W0L,826
+1304:  CALL    65C
+....................                    printf(lcd_display,"%f",operand2); 
+1308:  MOV     810,W0
+130A:  MOV     812,W1
+130C:  MOV     814,W2
+130E:  MOV     816,W3
+1310:  MOV     #2,W9
+1312:  MOV     #8008,W10
+1314:  CALL    876
+....................                    //UART display 
+....................                    printf("\n\r%f",operand1); 
+1318:  BTSS.B  233.0
+131A:  BRA     1318
+131C:  MOV     #A,W4
+131E:  MOV     W4,234
+1320:  BTSS.B  233.0
+1322:  BRA     1320
+1324:  MOV     #D,W4
+1326:  MOV     W4,234
+1328:  MOV     808,W0
+132A:  MOV     80A,W1
+132C:  MOV     80C,W2
+132E:  MOV     80E,W3
+1330:  MOV     #2,W9
+1332:  MOV     #8008,W10
+1334:  CALL    A18
+....................                    printf("*"); 
+1338:  BTSS.B  233.0
+133A:  BRA     1338
+133C:  MOV     #2A,W4
+133E:  MOV     W4,234
+....................                    printf("%f",operand2); 
+1340:  MOV     810,W0
+1342:  MOV     812,W1
+1344:  MOV     814,W2
+1346:  MOV     816,W3
+1348:  MOV     #2,W9
+134A:  MOV     #8008,W10
+134C:  CALL    A18
+....................                    } 
+....................                    if(sign == 'D'&& operand2 != 0){ 
+1350:  MOV     820,W4
+1352:  XOR.B   #44,W4L
+1354:  BRA     NZ,13E8
+1356:  MOV     810,W0
+1358:  MOV     812,W1
+135A:  MOV     814,W2
+135C:  MOV     816,W3
+135E:  MOV     #0,W4
+1360:  MOV     #0,W5
+1362:  MOV     #0,W6
+1364:  MOV     #0,W7
+1366:  CALL    B9A
+136A:  BRA     Z,13E8
+....................                    operand2 = -1*operand2; 
+136C:  MOV     #0,W0
+136E:  MOV     #0,W1
+1370:  MOV     #0,W2
+1372:  MOV     #BFF0,W3
+1374:  MOV     810,W4
+1376:  MOV     812,W5
+1378:  MOV     814,W6
+137A:  MOV     816,W7
+137C:  CALL    674
+1380:  MOV     W0,810
+1382:  MOV     W1,812
+1384:  MOV     W2,814
+1386:  MOV     W3,816
+....................                    //LCD display 
+....................                    printf(lcd_display,"%f",operand1); 
+1388:  MOV     808,W0
+138A:  MOV     80A,W1
+138C:  MOV     80C,W2
+138E:  MOV     80E,W3
+1390:  MOV     #2,W9
+1392:  MOV     #8008,W10
+1394:  CALL    876
+....................                    printf(lcd_display,"/"); 
+1398:  MOV.B   #2F,W0L
+139A:  MOV.B   W0L,826
+139C:  CALL    65C
+....................                    printf(lcd_display,"%f",operand2); 
+13A0:  MOV     810,W0
+13A2:  MOV     812,W1
+13A4:  MOV     814,W2
+13A6:  MOV     816,W3
+13A8:  MOV     #2,W9
+13AA:  MOV     #8008,W10
+13AC:  CALL    876
+....................                    //UART display 
+....................                    printf("\n\r%f",operand1); 
+13B0:  BTSS.B  233.0
+13B2:  BRA     13B0
+13B4:  MOV     #A,W4
+13B6:  MOV     W4,234
+13B8:  BTSS.B  233.0
+13BA:  BRA     13B8
+13BC:  MOV     #D,W4
+13BE:  MOV     W4,234
+13C0:  MOV     808,W0
+13C2:  MOV     80A,W1
+13C4:  MOV     80C,W2
+13C6:  MOV     80E,W3
+13C8:  MOV     #2,W9
+13CA:  MOV     #8008,W10
+13CC:  CALL    A18
+....................                    printf("/"); 
+13D0:  BTSS.B  233.0
+13D2:  BRA     13D0
+13D4:  MOV     #2F,W4
+13D6:  MOV     W4,234
+....................                    printf("%f",operand2); 
+13D8:  MOV     810,W0
+13DA:  MOV     812,W1
+13DC:  MOV     814,W2
+13DE:  MOV     816,W3
+13E0:  MOV     #2,W9
+13E2:  MOV     #8008,W10
+13E4:  CALL    A18
+....................                    } 
+....................                } 
+....................                //Reset calculator 
+....................                if(errorMessage == 1){ 
+13E8:  MOV     822,W4
+13EA:  CP      W4,#1
+13EC:  BRA     NZ,1420
+....................                    putc('*'); 
+13EE:  MOV.B   #2A,W0L
+13F0:  BTSS.B  233.0
+13F2:  BRA     13F0
+13F4:  MOV.B   W0L,234
+13F6:  CLR.B   235
+....................                   lcd_display('\f'); 
+13F8:  MOV.B   #C,W0L
+13FA:  MOV.B   W0L,826
+13FC:  CALL    65C
+....................                    key = '\0'; 
+1400:  CLR.B   804
+....................                    operand1 = 0; 
+1402:  CLR     808
+1404:  CLR     80A
+1406:  CLR     80C
+1408:  CLR     80E
+....................                    operand2 = 0; 
+140A:  CLR     810
+140C:  CLR     812
+140E:  CLR     814
+1410:  CLR     816
+....................                    intkey = 0; 
+1412:  CLR     806
+....................                    sign = '\0';  
+1414:  CLR.B   820
+....................                    result = 0; 
+1416:  CLR     818
+1418:  CLR     81A
+141A:  CLR     81C
+141C:  CLR     81E
+....................                    errorMessage = 0; 
+141E:  CLR     822
+....................                } 
+....................                 
+....................          }  // end if(key == *) 
+1420:  BRA     1754
+....................          else{ 
+....................             //accept integers 
+....................             if((key >= '0' && key <= '9')){ 
+1422:  MOV     804,W4
+1424:  MOV     #30,W3
+1426:  CP.B    W3L,W4L
+1428:  BRA     GT,151C
+142A:  MOV     804,W4
+142C:  MOV     #39,W3
+142E:  CP.B    W3L,W4L
+1430:  BRA     LT,151C
+....................             lcd_display(key); 
+1432:  MOV.B   804,W0L
+1434:  MOV.B   W0L,826
+1436:  CALL    65C
+....................             putc(key); 
+143A:  MOV.B   804,W0L
+143C:  BTSS.B  233.0
+143E:  BRA     143C
+1440:  MOV.B   W0L,234
+1442:  CLR.B   235
+....................              if(sign == 'A'|| sign == 'B' || sign == 'C'||sign == 'D'){ 
+1444:  MOV     820,W4
+1446:  XOR.B   #41,W4L
+1448:  BRA     Z,145C
+144A:  MOV     820,W4
+144C:  XOR.B   #42,W4L
+144E:  BRA     Z,145C
+1450:  MOV     820,W4
+1452:  XOR.B   #43,W4L
+1454:  BRA     Z,145C
+1456:  MOV     820,W4
+1458:  XOR.B   #44,W4L
+145A:  BRA     NZ,14BA
+....................                 intKey = key-0x30; //char to int shift to get another number 
+145C:  MOV.B   804,W0L
+145E:  SE      W0,W0
+1460:  SUB     #30,W0
+1462:  MOV     W0,806
+....................                 operand2 = (10*operand2) + intkey;  
+1464:  MOV     #0,W0
+1466:  MOV     #0,W1
+1468:  MOV     #0,W2
+146A:  MOV     #4024,W3
+146C:  MOV     810,W4
+146E:  MOV     812,W5
+1470:  MOV     814,W6
+1472:  MOV     816,W7
+1474:  CALL    674
+1478:  MOV     W0,W5
+147A:  MOV     W1,W6
+147C:  MOV     W2,W7
+147E:  MOV     W3,W8
+1480:  MOV     806,W0
+1482:  CLR     W3
+1484:  BTSC    W0.F
+1486:  SETM    W3
+1488:  MOV     W3,W1
+148A:  MOV     W3,W2
+148C:  CALL    C1E
+1490:  BCLR.B  43.0
+1492:  MOV     W5,[W15++]
+1494:  MOV     W6,[W15++]
+1496:  MOV     W7,[W15++]
+1498:  MOV     W0,W4
+149A:  MOV     W5,W0
+149C:  MOV     W1,W5
+149E:  MOV     W6,W1
+14A0:  MOV     W2,W6
+14A2:  MOV     W7,W2
+14A4:  MOV     W3,W7
+14A6:  MOV     W8,W3
+14A8:  CALL    C88
+14AC:  MOV     [--W15],W7
+14AE:  MOV     [--W15],W6
+14B0:  MOV     [--W15],W5
+14B2:  MOV     W0,810
+14B4:  MOV     W1,812
+14B6:  MOV     W2,814
+14B8:  MOV     W3,816
+....................              } 
+....................              if(sign == '\0'){ 
+14BA:  CP0.B   820
+14BC:  BRA     NZ,151C
+....................              intKey = key-0x30; //char to int shift to get another number 
+14BE:  MOV.B   804,W0L
+14C0:  SE      W0,W0
+14C2:  SUB     #30,W0
+14C4:  MOV     W0,806
+....................              operand1 = (10*operand1) + intkey; 
+14C6:  MOV     #0,W0
+14C8:  MOV     #0,W1
+14CA:  MOV     #0,W2
+14CC:  MOV     #4024,W3
+14CE:  MOV     808,W4
+14D0:  MOV     80A,W5
+14D2:  MOV     80C,W6
+14D4:  MOV     80E,W7
+14D6:  CALL    674
+14DA:  MOV     W0,W5
+14DC:  MOV     W1,W6
+14DE:  MOV     W2,W7
+14E0:  MOV     W3,W8
+14E2:  MOV     806,W0
+14E4:  CLR     W3
+14E6:  BTSC    W0.F
+14E8:  SETM    W3
+14EA:  MOV     W3,W1
+14EC:  MOV     W3,W2
+14EE:  CALL    C1E
+14F2:  BCLR.B  43.0
+14F4:  MOV     W5,[W15++]
+14F6:  MOV     W6,[W15++]
+14F8:  MOV     W7,[W15++]
+14FA:  MOV     W0,W4
+14FC:  MOV     W5,W0
+14FE:  MOV     W1,W5
+1500:  MOV     W6,W1
+1502:  MOV     W2,W6
+1504:  MOV     W7,W2
+1506:  MOV     W3,W7
+1508:  MOV     W8,W3
+150A:  CALL    C88
+150E:  MOV     [--W15],W7
+1510:  MOV     [--W15],W6
+1512:  MOV     [--W15],W5
+1514:  MOV     W0,808
+1516:  MOV     W1,80A
+1518:  MOV     W2,80C
+151A:  MOV     W3,80E
+....................              }  
+....................             }     
+....................             //accept the operations 
+....................             if( key == 'A'|| key == 'B' || key == 'C'||key == 'D'){ 
+151C:  MOV     804,W4
+151E:  XOR.B   #41,W4L
+1520:  BRA     Z,1534
+1522:  MOV     804,W4
+1524:  XOR.B   #42,W4L
+1526:  BRA     Z,1534
+1528:  MOV     804,W4
+152A:  XOR.B   #43,W4L
+152C:  BRA     Z,1534
+152E:  MOV     804,W4
+1530:  XOR.B   #44,W4L
+1532:  BRA     NZ,159A
+....................                sign = key; 
+1534:  MOV.B   804,W0L
+1536:  MOV.B   W0L,820
+....................                switch(sign){ 
+1538:  MOV.B   820,W0L
+153A:  SE      W0,W0
+153C:  XOR     #41,W0
+153E:  BRA     Z,154A
+1540:  XOR     #3,W0
+1542:  BRA     Z,155E
+1544:  XOR     #1,W0
+1546:  BRA     Z,1572
+1548:  BRA     1586
+....................                   case 'A':{ lcd_display('+'); 
+154A:  MOV.B   #2B,W0L
+154C:  MOV.B   W0L,826
+154E:  CALL    65C
+....................                               putc('+');} 
+1552:  MOV.B   #2B,W0L
+1554:  BTSS.B  233.0
+1556:  BRA     1554
+1558:  MOV.B   W0L,234
+155A:  CLR.B   235
+....................                   break; 
+155C:  BRA     159A
+....................                   case 'B':{ lcd_display('-'); 
+155E:  MOV.B   #2D,W0L
+1560:  MOV.B   W0L,826
+1562:  CALL    65C
+....................                              putc('-');} 
+1566:  MOV.B   #2D,W0L
+1568:  BTSS.B  233.0
+156A:  BRA     1568
+156C:  MOV.B   W0L,234
+156E:  CLR.B   235
+....................                   break; 
+1570:  BRA     159A
+....................                   case 'C':{ lcd_display('*'); 
+1572:  MOV.B   #2A,W0L
+1574:  MOV.B   W0L,826
+1576:  CALL    65C
+....................                               putc('*');} 
+157A:  MOV.B   #2A,W0L
+157C:  BTSS.B  233.0
+157E:  BRA     157C
+1580:  MOV.B   W0L,234
+1582:  CLR.B   235
+....................                   break; 
+1584:  BRA     159A
+....................                   default:{lcd_display('/'); 
+1586:  MOV.B   #2F,W0L
+1588:  MOV.B   W0L,826
+158A:  CALL    65C
+....................                            putc('/');} 
+158E:  MOV.B   #2F,W0L
+1590:  BTSS.B  233.0
+1592:  BRA     1590
+1594:  MOV.B   W0L,234
+1596:  CLR.B   235
+....................                   break; 
+1598:  BRA     159A
+....................                } 
+....................             } 
+....................             //calculate result 
+....................             if(key == '#'){ 
+159A:  MOV     804,W4
+159C:  XOR.B   #23,W4L
+159E:  BRA     NZ,1754
+....................                putc('='); 
+15A0:  MOV.B   #3D,W0L
+15A2:  BTSS.B  233.0
+15A4:  BRA     15A2
+15A6:  MOV.B   W0L,234
+15A8:  CLR.B   235
+....................                switch(sign){ 
+15AA:  MOV.B   820,W0L
+15AC:  SE      W0,W0
+15AE:  XOR     #41,W0
+15B0:  BRA     Z,15BC
+15B2:  XOR     #3,W0
+15B4:  BRA     Z,15DC
+15B6:  XOR     #1,W0
+15B8:  BRA     Z,1606
+15BA:  BRA     1624
+....................                   case 'A': result = operand1 + operand2; 
+15BC:  BCLR.B  43.0
+15BE:  MOV     808,W0
+15C0:  MOV     80A,W1
+15C2:  MOV     80C,W2
+15C4:  MOV     80E,W3
+15C6:  MOV     810,W4
+15C8:  MOV     812,W5
+15CA:  MOV     814,W6
+15CC:  MOV     816,W7
+15CE:  CALL    C88
+15D2:  MOV     W0,818
+15D4:  MOV     W1,81A
+15D6:  MOV     W2,81C
+15D8:  MOV     W3,81E
+....................                   break; 
+15DA:  BRA     164C
+....................                   case 'B':result = (float)operand1 - operand2; 
+15DC:  MOV     808,W0
+15DE:  MOV     80A,W1
+15E0:  MOV     80C,W2
+15E2:  MOV     80E,W3
+15E4:  CALL    E76
+15E8:  MOV     #0,W0
+15EA:  CALL    EBA
+15EE:  BSET.B  43.0
+15F0:  MOV     810,W4
+15F2:  MOV     812,W5
+15F4:  MOV     814,W6
+15F6:  MOV     816,W7
+15F8:  CALL    C88
+15FC:  MOV     W0,818
+15FE:  MOV     W1,81A
+1600:  MOV     W2,81C
+1602:  MOV     W3,81E
+....................                   break; 
+1604:  BRA     164C
+....................                   case 'C':result = operand1 * operand2; 
+1606:  MOV     808,W0
+1608:  MOV     80A,W1
+160A:  MOV     80C,W2
+160C:  MOV     80E,W3
+160E:  MOV     810,W4
+1610:  MOV     812,W5
+1612:  MOV     814,W6
+1614:  MOV     816,W7
+1616:  CALL    674
+161A:  MOV     W0,818
+161C:  MOV     W1,81A
+161E:  MOV     W2,81C
+1620:  MOV     W3,81E
+....................                   break; 
+1622:  BRA     164C
+....................                   default:result = (float)operand1 / operand2; 
+1624:  MOV     808,W0
+1626:  MOV     80A,W1
+1628:  MOV     80C,W2
+162A:  MOV     80E,W3
+162C:  CALL    E76
+1630:  MOV     #0,W0
+1632:  CALL    EBA
+1636:  MOV     810,W4
+1638:  MOV     812,W5
+163A:  MOV     814,W6
+163C:  MOV     816,W7
+163E:  CALL    F04
+1642:  MOV     W0,818
+1644:  MOV     W1,81A
+1646:  MOV     W2,81C
+1648:  MOV     W3,81E
+....................                   break; 
+164A:  BRA     164C
+....................                } 
+....................                if(sign == 'D' && operand2 == 0){ 
+164C:  MOV     820,W4
+164E:  XOR.B   #44,W4L
+1650:  BRA     NZ,16A0
+1652:  MOV     810,W0
+1654:  MOV     812,W1
+1656:  MOV     814,W2
+1658:  MOV     816,W3
+165A:  MOV     #0,W4
+165C:  MOV     #0,W5
+165E:  MOV     #0,W6
+1660:  MOV     #0,W7
+1662:  CALL    B9A
+1666:  BRA     NZ,16A0
+....................                 printf(lcd_display,"\nerror"); 
+1668:  MOV     #0,W1
+166A:  MOV     W1,W0
+166C:  CLR.B   1
+166E:  CALL    292
+1672:  INC     W1,W1
+1674:  MOV     W1,[W15++]
+1676:  MOV.B   W0L,826
+1678:  CALL    65C
+167C:  MOV     [--W15],W1
+167E:  MOV     #5,W0
+1680:  CPSGT   W1,W0
+1682:  BRA     166A
+....................                // printf("\n\rerror\n\r"); 
+....................                printf("error"); 
+1684:  MOV     #0,W1
+1686:  MOV     W1,W0
+1688:  CLR.B   1
+168A:  CALL    2A6
+168E:  INC     W1,W1
+1690:  BTSS.B  233.0
+1692:  BRA     1690
+1694:  MOV     W0,234
+1696:  MOV     #4,W0
+1698:  CPSGT   W1,W0
+169A:  BRA     1686
+....................                 errorMessage = 1; 
+169C:  MOV     #1,W4
+169E:  MOV     W4,822
+....................                } 
+....................                if(result != 0){ 
+16A0:  MOV     818,W0
+16A2:  MOV     81A,W1
+16A4:  MOV     81C,W2
+16A6:  MOV     81E,W3
+16A8:  MOV     #0,W4
+16AA:  MOV     #0,W5
+16AC:  MOV     #0,W6
+16AE:  MOV     #0,W7
+16B0:  CALL    B9A
+16B4:  BRA     Z,16E4
+....................                printf(lcd_display,"\n=%f",result); 
+16B6:  MOV.B   #A,W0L
+16B8:  MOV.B   W0L,826
+16BA:  CALL    65C
+16BE:  MOV.B   #3D,W0L
+16C0:  MOV.B   W0L,826
+16C2:  CALL    65C
+16C6:  MOV     818,W0
+16C8:  MOV     81A,W1
+16CA:  MOV     81C,W2
+16CC:  MOV     81E,W3
+16CE:  MOV     #2,W9
+16D0:  MOV     #8008,W10
+16D2:  CALL    876
+....................               // printf("\n\r=%f\n\r",result); 
+....................               putc(result); 
+16D6:  MOV.B   818,W0L
+16D8:  BTSS.B  233.0
+16DA:  BRA     16D8
+16DC:  MOV.B   W0L,234
+16DE:  CLR.B   235
+....................                errorMessage = 2; 
+16E0:  MOV     #2,W4
+16E2:  MOV     W4,822
+....................                } 
+....................                if(operand1 != 0 && operand2 != 0 && result == 0){ 
+16E4:  MOV     808,W0
+16E6:  MOV     80A,W1
+16E8:  MOV     80C,W2
+16EA:  MOV     80E,W3
+16EC:  MOV     #0,W4
+16EE:  MOV     #0,W5
+16F0:  MOV     #0,W6
+16F2:  MOV     #0,W7
+16F4:  CALL    B9A
+16F8:  BRA     Z,1754
+16FA:  MOV     810,W0
+16FC:  MOV     812,W1
+16FE:  MOV     814,W2
+1700:  MOV     816,W3
+1702:  MOV     #0,W4
+1704:  MOV     #0,W5
+1706:  MOV     #0,W6
+1708:  MOV     #0,W7
+170A:  CALL    B9A
+170E:  BRA     Z,1754
+1710:  MOV     818,W0
+1712:  MOV     81A,W1
+1714:  MOV     81C,W2
+1716:  MOV     81E,W3
+1718:  MOV     #0,W4
+171A:  MOV     #0,W5
+171C:  MOV     #0,W6
+171E:  MOV     #0,W7
+1720:  CALL    B9A
+1724:  BRA     NZ,1754
+....................                printf(lcd_display,"\n=%f",result); 
+1726:  MOV.B   #A,W0L
+1728:  MOV.B   W0L,826
+172A:  CALL    65C
+172E:  MOV.B   #3D,W0L
+1730:  MOV.B   W0L,826
+1732:  CALL    65C
+1736:  MOV     818,W0
+1738:  MOV     81A,W1
+173A:  MOV     81C,W2
+173C:  MOV     81E,W3
+173E:  MOV     #2,W9
+1740:  MOV     #8008,W10
+1742:  CALL    876
+....................               // printf("\n\r=%f\n\r",result); 
+....................               putc(result); 
+1746:  MOV.B   818,W0L
+1748:  BTSS.B  233.0
+174A:  BRA     1748
+174C:  MOV.B   W0L,234
+174E:  CLR.B   235
+....................                errorMessage = 2; 
+1750:  MOV     #2,W4
+1752:  MOV     W4,822
+....................                } 
+....................              } 
+....................          }   
+....................       }// end if(key) 
+1754:  BRA     10E2
+....................    }// end while loop 
+.................... }//end main 
+1756:  PWRSAV  #0
+
+Configuration Fuses:
+   Word  1L: 000F   NOWRTB NOBSS
+          H: 0000  
+   Word  2L: 0000  
+          H: 0000  
+   Word  3L: 0003   NOWRT NOPROTECT
+          H: 0000  
+   Word  4L: 00E1   FRC_PLL SOSC_ANALOG LPRCHIGH IESO
+          H: 0000  
+   Word  5L: 003B   NOPR OSCIO POSCFREQ_H SOSC_HIGH CKSFSM
+          H: 0000  
+   Word  6L: 005F   WPOSTS16 WDT128 WINDIS NOWDT
+          H: 0000  
+   Word  7L: 009C   NOBROWNOUT PUT NOALTI2C1 BORV_LOW MCLR
+          H: 0000  
+   Word  8L: 0083   ICSP1 NODEBUG
+          H: 0000  

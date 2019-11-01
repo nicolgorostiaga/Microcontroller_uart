@@ -1,0 +1,173 @@
+W0      @SCRATCH
+W0L     _RETURN_
+W0 -W1  @READ_ROM_MEMORY.P1
+W0 -W3  @SI64TOF64.P2
+W0 -W3  @PRINTF_F64_115200_5712_5713.P3
+W0 -W3  @ADDFF64.P4
+W0 -W1  @DIV3232B.P5
+W0 -W3  @F64TO48.P6
+W0 -W3  @FLT64.P7
+W0 -W3  @PRINTF_F64_960.P8
+W0 -W3  @DIVFF64.P9
+W0 -W3  @F64TOI64.P10
+W0      @delay_ms1.P11
+W0 -W3  @DIV6464B.P12
+W0 -W3  @MULFF64.P13
+W0      @delay_us1.P14
+W0 -W2  @F48TO64.P15
+W1      @SCRATCH
+W1      @READ_PACKED_MEMORY.P1
+W1      @WRITE_PACKED_MEMORY.P2
+W2      @READ_PACKED_MEMORY.P1
+W2      @WRITE_PACKED_MEMORY.P2
+W2 -W3  @DIV3232B.P3
+W2      @READ_ROM_MEMORY.P4
+W3      @WRITE_PACKED_MEMORY.P1
+W3      @READ_ROM_MEMORY.P2
+W3      @READ_PACKED_MEMORY.P3
+W4 -W7  @DIV6464B.P1
+W4 -W7  @ADDFF64.P2
+W4 -W7  @FLT64.P3
+W4 -W7  @MULFF64.P4
+W4 -W7  @DIVFF64.P5
+W9 -W10 @PRINTF_F64_115200_5712_5713.P1
+W9 -W10 @PRINTF_F64_960.P2
+122.6   LC1OUT
+12E.6   LC2OUT
+145.4   CCP_1_SSDG
+14C.4   CCP_1_ASEVT
+14C.5   CCP_1_TRCLR
+14C.6   CCP_1_TRSET
+169.4   CCP_2_SSDG
+170.4   CCP_2_ASEVT
+170.5   CCP_2_TRCLR
+170.6   CCP_2_TRSET
+18D.4   CCP_3_SSDG
+194.4   CCP_3_ASEVT
+194.5   CCP_3_TRCLR
+194.6   CCP_3_TRSET
+1B1.4   CCP_4_SSDG
+1B8.4   CCP_4_ASEVT
+1B8.5   CCP_4_TRCLR
+1B8.6   CCP_4_TRSET
+1D5.4   CCP_5_SSDG
+1DC.4   CCP_5_ASEVT
+1DC.5   CCP_5_TRCLR
+1DC.6   CCP_5_TRSET
+2CA     kbd
+635.0   C1OUT
+635.1   C1ENV
+637.0   C2OUT
+637.1   C2ENV
+639.0   C3OUT
+639.1   C3ENV
+800-801 rs232_errors
+802.0   serial_flag
+802.1   keypad_flag
+803     uart_key
+804     key
+806-807 MAIN.intkey
+808-80F MAIN.operand1
+810-817 MAIN.operand2
+818-81F MAIN.result
+820     MAIN.sign
+822-823 MAIN.errorMessage
+824-825 MAIN.repeat
+826     lcd_init.i
+826     lcd_display.c
+828-82B lcd_init.LCD_INIT_STRING
+828     lcd_putc.c
+82A     lcd_gotoxy.x
+82B     lcd_gotoxy.y
+82C     lcd_gotoxy.address
+832     lcd_send_byte.address
+833     lcd_send_byte.n
+836     lcd_read_byte.low
+837     lcd_read_byte.high
+838     lcd_read_nibble.n
+83A     lcd_send_nibble.n
+864.0   kbd_getc.kbd_down
+864.1   kbd_getc.idd
+865     kbd_getc.last_key
+866     kbd_getc.col
+867     kbd_getc.kchar
+868     kbd_getc.row
+F80-FFF Stack
+
+ROM Allocation:
+000200  KEYS.call
+00020C  KEYS.data
+00021C  @const972.call
+00023A  @const973.call
+00025A  @const974.call
+000276  @const975.call
+000292  @const1032.call
+0002A6  @const1033.call
+0002B8  @GETCH_BIU_1
+0002DA  isr_uart
+000302  kbd_getc
+0003F4  isr_ext
+00041C  @delay_ms1
+00042C  lcd_send_nibble
+000464  lcd_read_nibble
+00049C  lcd_read_byte
+0004E6  lcd_send_byte
+000532  lcd_init
+0005A8  lcd_gotoxy
+0005DA  lcd_putc
+00063C  kbd_init
+00065C  lcd_display
+000674  @MULFF64
+000784  @F64TOI64
+0007E2  @DIV6464B
+000876  @PRINTF_F64_960
+000A18  @PRINTF_F64_115200_5712_5713
+000B9A  @FLT64
+000C1E  @SI64TOF64
+000C88  @ADDFF64
+000E76  @F64TO48
+000EBA  @F48TO64
+000F04  @DIVFF64
+00100C  MAIN
+00100C  @cinit1
+001032  @cinit2
+
+Project Directory:
+    C:\Users\Admin\Desktop\Fall2019\Nicol_lab4\
+
+Project Files:
+    lcd.c                                                   [01-Oct-19 14:45  CRC=28499D5E]
+    lcd.h                                                   [23-Sep-19 13:46  CRC=050657A8]
+    ..\..\PICC\Devices\24FV16KM202.h                        [27-Jan-17 19:45  CRC=B204A216]
+    ..\..\PICC\Drivers\lcd.c                                [22-Feb-16 09:05  CRC=D1A6378A]
+    keypad.c                                                [23-Sep-19 13:03  CRC=787569BD]
+    uart.c                                                  [23-Sep-19 14:06  CRC=B96F2DBD]
+
+Source signature=9C4E93DD
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=22C9
+
+Units:
+    lcd (main)
+
+Compiler Settings:
+    Processor:      PIC24FV16KM202
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: SIGNED: 8,16,32
+    Float,Double:   32,64
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   lcd.xsym
+    Errors:      lcd.err
+    Ext Symbols: lcd.esym
+    INHX8:       lcd.hex
+    Symbols:     lcd.sym
+    List:        lcd.lst
+    Debug/COFF:  lcd.cof
+    Project:     lcd.ccspjt
+    Call Tree:   lcd.tre
+    Statistics:  lcd.STA
